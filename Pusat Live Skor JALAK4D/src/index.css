@@ -1,0 +1,665 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Unbounded:wght@700;800;900&display=swap');
+
+@layer base {
+  * {
+    font-family: 'Plus Jakarta Sans', 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+
+  body {
+    background-color: #09090b;
+    color: #ffffff;
+    font-family: 'Plus Jakarta Sans', 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* 3D Bold & Wide Display Typography */
+.font-hero-3d {
+  font-family: 'Unbounded', 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 900;
+  text-shadow: 
+    0 1px 0 #b45309,
+    0 2px 0 #92400e,
+    0 3px 0 #78350f,
+    0 4px 0 #451a03,
+    0 6px 14px rgba(0, 0, 0, 0.65),
+    0 10px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Custom Thick Solid Gold/Yellow Cards & Panels */
+.glass {
+  background: #eab308;
+  border: 3px solid #facc15;
+  box-shadow: 0 8px 32px rgba(234, 179, 8, 0.45);
+  border-radius: 1.25rem;
+}
+
+.glass-static {
+  background: #eab308;
+  border: 3px solid #facc15;
+  box-shadow: 0 8px 32px rgba(234, 179, 8, 0.45);
+  border-radius: 1.25rem;
+}
+
+.glass-sidebar {
+  background: #000000;
+  border-right: 2px solid #eab308;
+}
+
+.klasemen-tab {
+  padding: 0.375rem 0.85rem;
+  border-radius: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  white-space: nowrap;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+  background-color: #000000;
+  color: #ffffff;
+  border: 2px solid #eab308;
+}
+
+.klasemen-tab:hover {
+  background-color: #facc15;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+/* Yellow Glow Button (Pill Theme & Clean Style) */
+.btn-gold-glow {
+  background: linear-gradient(180deg, #fef08a 0%, #facc15 50%, #eab308 100%);
+  border: 2px solid #ffffff;
+  border-radius: 9999px;
+  color: #000000;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-gold-glow:hover,
+.btn-gold-glow:focus-visible {
+  background: linear-gradient(180deg, #ffffff 0%, #fef08a 35%, #facc15 100%);
+  border-color: #ffffff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+  transform: translateY(-1px);
+}
+
+.btn-gold-glow:active {
+  background: linear-gradient(180deg, #fde047 0%, #eab308 50%, #ca8a04 100%);
+  border-color: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  transform: scale(0.97);
+}
+
+/* Wide Expanding Gold Glow for Modals */
+.modal-gold-glow {
+  box-shadow: 0 0 35px rgba(250, 204, 21, 0.75), 0 0 80px rgba(234, 179, 8, 0.5), 0 0 130px rgba(245, 158, 11, 0.35), 0 25px 60px rgba(0, 0, 0, 0.75);
+  border: 2.5px solid #facc15;
+}
+
+/* Touch & Hover Glow for Inner Modal Components */
+.avatar-touch-glow {
+  border: 2.5px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.avatar-touch-glow:hover,
+.avatar-touch-glow:active {
+  box-shadow: 0 0 16px rgba(250, 204, 21, 0.8), 0 0 30px rgba(234, 179, 8, 0.45);
+  transform: scale(1.05);
+}
+
+.stat-box-touch-glow {
+  background: #fffdf0;
+  border: 2px solid #fde047;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.stat-box-touch-glow:hover,
+.stat-box-touch-glow:active,
+.stat-box-touch-glow:focus-visible {
+  background: #fefce8;
+  border-color: #facc15;
+  box-shadow: 0 0 15px rgba(250, 204, 21, 0.75), 0 0 28px rgba(234, 179, 8, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-kembali-glow {
+  background: linear-gradient(180deg, #fef08a 0%, #facc15 50%, #eab308 100%);
+  border: 2px solid #ffffff;
+  border-radius: 9999px;
+  color: #000000;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-kembali-glow:hover,
+.btn-kembali-glow:focus-visible {
+  background: linear-gradient(180deg, #ffffff 0%, #fef08a 35%, #facc15 100%);
+  border-color: #ffffff;
+  box-shadow: 0 0 18px rgba(250, 204, 21, 0.85), 0 0 32px rgba(234, 179, 8, 0.45);
+  transform: translateY(-1px);
+}
+
+.btn-kembali-glow:active {
+  background: linear-gradient(180deg, #fde047 0%, #eab308 50%, #ca8a04 100%);
+  border-color: #ffffff;
+  box-shadow: 0 0 22px rgba(250, 204, 21, 0.95), 0 0 40px rgba(234, 179, 8, 0.55);
+  transform: scale(0.97);
+}
+
+/* Match Detail / Statistics Modal Close Button (Follows Login Button Style WITHOUT glow) */
+.btn-close-stat-x,
+.btn-close-modal-glow {
+  background: linear-gradient(180deg, #fef08a 0%, #facc15 50%, #eab308 100%);
+  color: #000000;
+  border: 2px solid #ffffff;
+  border-radius: 9999px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform 0.15s ease, filter 0.15s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-close-stat-x:hover,
+.btn-close-stat-x:focus-visible,
+.btn-close-modal-glow:hover,
+.btn-close-modal-glow:focus-visible {
+  filter: brightness(1.06);
+  transform: translateY(-1px) scale(1.05);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.28);
+}
+
+.btn-close-stat-x:active,
+.btn-close-modal-glow:active {
+  filter: brightness(0.94);
+  transform: scale(0.94);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Login Button Style without Glow (Used for Klasemen 5 Liga tabs and LIVE UPDATE) */
+.btn-login-style {
+  background: linear-gradient(180deg, #fef08a 0%, #facc15 50%, #eab308 100%);
+  color: #000000;
+  border: 2px solid #ffffff;
+  font-weight: 900;
+  border-radius: 9999px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s ease, filter 0.15s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-login-style:hover {
+  filter: brightness(1.05);
+}
+
+.btn-login-style:active {
+  filter: brightness(0.95);
+  transform: scale(0.97);
+}
+
+/* Search Pill in Match Filter matching LIVE UPDATE style with active glow */
+.search-pill-style {
+  background: linear-gradient(180deg, #fef08a 0%, #facc15 50%, #eab308 100%);
+  color: #000000;
+  border: 2px solid #ffffff;
+  font-weight: 900;
+  border-radius: 9999px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.search-pill-style:hover {
+  filter: brightness(1.05);
+}
+
+.search-pill-style:focus-within,
+.search-pill-style.is-focused,
+.search-pill-style.has-value {
+  background: linear-gradient(180deg, #ffffff 0%, #fef08a 35%, #facc15 100%);
+  border-color: #ffffff;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.95), 0 0 35px rgba(250, 204, 21, 0.9), 0 4px 15px rgba(0, 0, 0, 0.35);
+  transform: scale(1.02);
+}
+
+.btn-login-style-inactive {
+  background: #18181b;
+  color: #d4d4d8;
+  border: 2px solid #27272a;
+  font-weight: 900;
+  border-radius: 9999px;
+  transition: all 0.15s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-login-style-inactive:hover {
+  border-color: #facc15;
+  color: #ffffff;
+}
+
+.btn-login-style-inactive:active {
+  transform: scale(0.97);
+}
+
+.klasemen-tab.active {
+  background-color: #facc15;
+  color: #000000;
+  border-color: #ffffff;
+  font-weight: 900;
+  box-shadow: 0 0 16px rgba(250, 204, 21, 0.8), 0 4px 12px rgba(250, 204, 21, 0.6);
+}
+
+.league-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+/* Custom Soft Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #facc15 #09090b;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-button {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+::-webkit-scrollbar-track {
+  background: #09090b;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #facc15;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #eab308;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.custom-gold-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #facc15 #09090b;
+}
+
+.custom-gold-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-gold-scrollbar::-webkit-scrollbar-button {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.custom-gold-scrollbar::-webkit-scrollbar-track {
+  background: #09090b;
+  border-radius: 9999px;
+}
+
+.custom-gold-scrollbar::-webkit-scrollbar-thumb {
+  background: #facc15;
+  border-radius: 9999px;
+}
+
+.custom-gold-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #eab308;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scale-up {
+  animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* =========================================================
+   Uiverse.io Social Media Glassmorphism & Animated Gradients
+   ========================================================= */
+ul.example-2 {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+}
+
+.icon-content {
+  margin: 0 4px;
+  position: relative;
+}
+
+.icon-content .tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 15px;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 30;
+}
+
+.icon-content:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -46px;
+}
+
+/* Base glassmorphism anchor */
+.icon-content a {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 20%;
+  color: #fff;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.18),
+    rgba(255, 255, 255, 0.06)
+  );
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  transition: all 0.35s ease-in-out;
+  text-decoration: none;
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.45),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.18),
+    0 6px 16px rgba(0, 0, 0, 0.22);
+}
+
+/* Specific glass borders */
+.icon-content[data-social="telegram"] a {
+  border: 1px solid rgba(0, 136, 204, 0.6);
+  box-shadow: inset 0 0 6px rgba(0, 136, 204, 0.4), 0 0 10px rgba(0, 136, 204, 0.5), 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.icon-content[data-social="x"] a,
+.icon-content[data-social="twitter"] a {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.4), 0 0 10px rgba(255, 255, 255, 0.5), 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.icon-content[data-social="whatsapp"] a {
+  border: 1px solid rgba(37, 211, 102, 0.6);
+  box-shadow: inset 0 0 6px rgba(37, 211, 102, 0.4), 0 0 10px rgba(37, 211, 102, 0.5), 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.icon-content[data-social="instagram"] a {
+  border: 1px solid rgba(225, 48, 108, 0.6);
+  box-shadow: inset 0 0 6px rgba(225, 48, 108, 0.4), 0 0 10px rgba(225, 48, 108, 0.5), 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.icon-content[data-social="pinterest"] a {
+  border: 1px solid rgba(189, 8, 28, 0.6);
+  box-shadow: inset 0 0 6px rgba(189, 8, 28, 0.4), 0 0 10px rgba(189, 8, 28, 0.5), 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.icon-content[data-social="tiktok"] a {
+  border: 1px solid rgba(254, 44, 85, 0.6);
+  box-shadow: inset 0 0 6px rgba(254, 44, 85, 0.4), 0 0 10px rgba(254, 44, 85, 0.5), 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.icon-content[data-social="spotify"] a {
+  border: 1px solid rgba(29, 185, 84, 0.6);
+  box-shadow: inset 0 0 6px rgba(29, 185, 84, 0.4), 0 0 10px rgba(29, 185, 84, 0.5), 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.icon-content[data-social="dribbble"] a {
+  border: 1px solid rgba(234, 76, 137, 0.6);
+  box-shadow: inset 0 0 6px rgba(234, 76, 137, 0.4), 0 0 10px rgba(234, 76, 137, 0.5), 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Common shine sweep effect */
+.icon-content a::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  transform: rotate(25deg) translateX(-100%);
+  transition: transform 0.8s ease;
+  z-index: 1;
+}
+
+.icon-content a:hover::before {
+  transform: rotate(25deg) translateX(100%);
+}
+
+.icon-content a:hover {
+  box-shadow: 3px 2px 45px 0px rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.icon-content a svg {
+  position: relative;
+  z-index: 2;
+  width: 24px;
+  height: 24px;
+}
+
+.icon-content a .filled {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  transition: all 0.3s ease-in-out;
+  border-radius: 20%;
+}
+
+/* Gradient animation keyframes */
+@keyframes premiumGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Telegram – dark premium blue gradient */
+.icon-content a[data-social="telegram"] .filled,
+.icon-content[data-social="telegram"] a .filled,
+.icon-content a[data-social="telegram"] ~ .tooltip,
+.icon-content[data-social="telegram"] .tooltip {
+  background: linear-gradient(135deg, #0a1f2d, #0f4a66, #0088cc, #0a2e44);
+  background-size: 400% 400%;
+  animation: premiumGradient 6s ease infinite;
+  backdrop-filter: blur(12px) saturate(200%);
+  -webkit-backdrop-filter: blur(12px) saturate(200%);
+  border: 1px solid rgba(0, 136, 204, 0.6);
+  box-shadow: inset 0 0 12px rgba(0, 136, 204, 0.5), 0 0 24px rgba(0, 136, 204, 0.7);
+}
+
+/* X / Twitter – dark premium monochrome gradient */
+.icon-content a[data-social="x"] .filled,
+.icon-content[data-social="x"] a .filled,
+.icon-content a[data-social="x"] ~ .tooltip,
+.icon-content[data-social="x"] .tooltip,
+.icon-content a[data-social="twitter"] .filled,
+.icon-content[data-social="twitter"] a .filled,
+.icon-content a[data-social="twitter"] ~ .tooltip,
+.icon-content[data-social="twitter"] .tooltip {
+  background: linear-gradient(135deg, #111111, #222222, #444444, #111111);
+  background-size: 400% 400%;
+  animation: premiumGradient 6s ease infinite;
+  backdrop-filter: blur(12px) saturate(200%);
+  -webkit-backdrop-filter: blur(12px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.3), 0 0 24px rgba(255, 255, 255, 0.5);
+}
+
+/* WhatsApp – dark premium emerald gradient */
+.icon-content a[data-social="whatsapp"] .filled,
+.icon-content[data-social="whatsapp"] a .filled,
+.icon-content a[data-social="whatsapp"] ~ .tooltip,
+.icon-content[data-social="whatsapp"] .tooltip {
+  background: linear-gradient(135deg, #072a1a, #0e5a37, #25d366, #093b23);
+  background-size: 400% 400%;
+  animation: premiumGradient 6s ease infinite;
+  backdrop-filter: blur(12px) saturate(200%);
+  -webkit-backdrop-filter: blur(12px) saturate(200%);
+  border: 1px solid rgba(37, 211, 102, 0.6);
+  box-shadow: inset 0 0 12px rgba(37, 211, 102, 0.5), 0 0 24px rgba(37, 211, 102, 0.7);
+}
+
+/* Instagram – dark premium magenta/rose gradient */
+.icon-content a[data-social="instagram"] .filled,
+.icon-content[data-social="instagram"] a .filled,
+.icon-content a[data-social="instagram"] ~ .tooltip,
+.icon-content[data-social="instagram"] .tooltip {
+  background: linear-gradient(135deg, #400d23, #831a47, #e1306c, #fd1d1d, #f56040);
+  background-size: 400% 400%;
+  animation: premiumGradient 6s ease infinite;
+  backdrop-filter: blur(12px) saturate(200%);
+  -webkit-backdrop-filter: blur(12px) saturate(200%);
+  border: 1px solid rgba(225, 48, 108, 0.6);
+  box-shadow: inset 0 0 12px rgba(225, 48, 108, 0.5), 0 0 24px rgba(225, 48, 108, 0.7);
+}
+
+/* Pinterest – dark premium red gradient */
+.icon-content a[data-social="pinterest"] .filled,
+.icon-content[data-social="pinterest"] a .filled,
+.icon-content a[data-social="pinterest"] ~ .tooltip,
+.icon-content[data-social="pinterest"] .tooltip {
+  background: linear-gradient(135deg, #3d0a0f, #7a0f1c, #bd081c, #4a0b12);
+  background-size: 400% 400%;
+  animation: premiumGradient 6s ease infinite;
+  backdrop-filter: blur(12px) saturate(200%);
+  -webkit-backdrop-filter: blur(12px) saturate(200%);
+  border: 1px solid rgba(189, 8, 28, 0.6);
+  box-shadow: inset 0 0 12px rgba(189, 8, 28, 0.5), 0 0 24px rgba(189, 8, 28, 0.7);
+}
+
+/* TikTok – dark premium cyan/magenta gradient */
+.icon-content a[data-social="tiktok"] .filled,
+.icon-content[data-social="tiktok"] a .filled,
+.icon-content a[data-social="tiktok"] ~ .tooltip,
+.icon-content[data-social="tiktok"] .tooltip {
+  background: linear-gradient(135deg, #091a1e, #14353d, #25f4ee, #fe2c55, #111111);
+  background-size: 400% 400%;
+  animation: premiumGradient 6s ease infinite;
+  backdrop-filter: blur(12px) saturate(200%);
+  -webkit-backdrop-filter: blur(12px) saturate(200%);
+  border: 1px solid rgba(254, 44, 85, 0.6);
+  box-shadow: inset 0 0 12px rgba(254, 44, 85, 0.5), 0 0 24px rgba(37, 244, 238, 0.6);
+}
+
+/* Spotify – dark premium green gradient */
+.icon-content a[data-social="spotify"] .filled,
+.icon-content[data-social="spotify"] a .filled,
+.icon-content a[data-social="spotify"] ~ .tooltip,
+.icon-content[data-social="spotify"] .tooltip {
+  background: linear-gradient(135deg, #0f3d1f, #146b35, #1db954, #0d2916);
+  background-size: 400% 400%;
+  animation: premiumGradient 6s ease infinite;
+  backdrop-filter: blur(12px) saturate(200%);
+  -webkit-backdrop-filter: blur(12px) saturate(200%);
+  border: 1px solid rgba(29, 185, 84, 0.6);
+  box-shadow: inset 0 0 12px rgba(29, 185, 84, 0.5), 0 0 24px rgba(29, 185, 84, 0.7);
+}
+
+/* Dribbble – dark premium pink gradient */
+.icon-content a[data-social="dribbble"] .filled,
+.icon-content[data-social="dribbble"] a .filled,
+.icon-content a[data-social="dribbble"] ~ .tooltip,
+.icon-content[data-social="dribbble"] .tooltip {
+  background: linear-gradient(135deg, #3a0f24, #7a1f4d, #ea4c89, #4a0f2d);
+  background-size: 400% 400%;
+  animation: premiumGradient 6s ease infinite;
+  backdrop-filter: blur(12px) saturate(200%);
+  -webkit-backdrop-filter: blur(12px) saturate(200%);
+  border: 1px solid rgba(234, 76, 137, 0.6);
+  box-shadow: inset 0 0 12px rgba(234, 76, 137, 0.5), 0 0 24px rgba(234, 76, 137, 0.7);
+}
+
+

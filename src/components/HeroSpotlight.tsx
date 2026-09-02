@@ -405,7 +405,7 @@ export const HeroSpotlight: React.FC<HeroSpotlightProps> = () => {
   return (
     <>
       {/* Hero Banner Container - GOLD / YELLOW THEME */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-b from-yellow-500 via-amber-500 to-yellow-600 border-[3px] border-yellow-300 p-4 sm:p-5 md:p-6 shadow-[0_12px_36px_rgba(234,179,8,0.55)] mb-8 text-center text-white">
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-b from-sky-500 via-sky-600 to-blue-700 border-[3px] border-sky-300 p-4 sm:p-5 md:p-6 shadow-[0_12px_36px_rgba(14,165,233,0.55)] mb-8 text-center text-white">
         
         {/* Subtle radial background glow */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.25),transparent_75%)] pointer-events-none"></div>

@@ -26,7 +26,7 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
-          {/* Logo WIFI4D */}
+          {/* Logo JALAK4D */}
           <div className="flex items-center">
             <a
               href="http://coastalcarolinaconnection.com/"
@@ -36,7 +36,7 @@ export const Header: React.FC<HeaderProps> = ({
             >
               <img
                 src="https://ik.imagekit.io/i22mizicx/jhk.png"
-                alt="WIFI4D Logo"
+                alt="JALAK4D Logo"
                 className="w-9 h-9 sm:w-11 sm:h-11 object-contain transition-transform group-hover:scale-105 group-active:scale-95 filter drop-shadow-[0_0_12px_rgba(234,179,8,0.6)]"
               />
               <div className="flex flex-col">

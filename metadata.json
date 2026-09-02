@@ -1,0 +1,6 @@
+{
+  "name": "WIFI4D - Media SepakBola",
+  "description": "Platform media jadwal, prediksi skor, h2h, klasemen liga & statistik sepakbola terupdate WIFI4D.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -76,20 +76,20 @@ export const MatchRowItem: React.FC<MatchRowItemProps> = ({ match, onSelectMatch
   return (
     <div
       onClick={() => onSelectMatch(match)}
-      className="group relative rounded-2xl bg-black border-2 border-white/90 p-4 sm:p-5 shadow-[0_6px_20px_rgba(0,0,0,0.6)] transition-all duration-300 ease-out cursor-pointer hover:-translate-y-0.5 hover:border-yellow-400 hover:shadow-[0_8px_28px_rgba(234,179,8,0.7)] active:translate-y-0 active:scale-[0.99] flex flex-col justify-between gap-4 overflow-hidden"
+      className="group relative rounded-2xl bg-sky-950/40 backdrop-blur-md border-2 border-sky-400/50 p-4 sm:p-5 shadow-[0_6px_20px_rgba(2,132,199,0.35)] transition-all duration-300 ease-out cursor-pointer hover:-translate-y-0.5 hover:border-sky-300 hover:shadow-[0_8px_28px_rgba(14,165,233,0.5)] active:translate-y-0 active:scale-[0.99] flex flex-col justify-between gap-4 overflow-hidden"
     >
       {/* Background ambient shine on hover */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-sky-500/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
 
       {/* Top Meta Bar: League & Live Match Status / Time */}
-      <div className="relative z-10 flex items-center justify-between gap-2 border-b border-zinc-800 pb-3 text-xs">
+      <div className="relative z-10 flex items-center justify-between gap-2 border-b border-sky-500/20 pb-3 text-xs">
         <div className="flex items-center gap-2">
           <img
             src={match.leagueFlag}
             alt={match.leagueName}
             className="w-4 h-3 rounded-[2px] object-cover flex-shrink-0 shadow-2xs border border-zinc-700"
           />
-          <span className="font-black text-yellow-400 uppercase tracking-wider text-[11px] sm:text-xs truncate">
+          <span className="font-black text-sky-300 uppercase tracking-wider text-[11px] sm:text-xs truncate">
             {match.leagueName}
           </span>
         </div>
@@ -102,7 +102,7 @@ export const MatchRowItem: React.FC<MatchRowItemProps> = ({ match, onSelectMatch
               LIVE {match.minute ? `${match.minute}'` : ''}
             </span>
           ) : match.status === 'FINISHED' ? (
-            <span className="inline-block text-[11px] sm:text-xs font-black text-black bg-white px-3 py-0.5 rounded-full uppercase whitespace-nowrap border-2 border-yellow-400 shadow-2xs tracking-wide">
+            <span className="inline-block text-[11px] sm:text-xs font-black text-black bg-white px-3 py-0.5 rounded-full uppercase whitespace-nowrap border-2 border-sky-400 shadow-2xs tracking-wide">
               FT
             </span>
           ) : null}
@@ -128,7 +128,7 @@ export const MatchRowItem: React.FC<MatchRowItemProps> = ({ match, onSelectMatch
               e.currentTarget.src = DEFAULT_TEAM_LOGO;
             }}
           />
-          <span className="font-black text-xs sm:text-base text-white group-hover:text-yellow-400 transition-colors truncate text-left">
+          <span className="font-black text-xs sm:text-base text-white group-hover:text-sky-300 transition-colors truncate text-left">
             {match.homeTeam.name}
           </span>
         </div>
@@ -136,7 +136,7 @@ export const MatchRowItem: React.FC<MatchRowItemProps> = ({ match, onSelectMatch
         {/* Center Score / VS Box (Cols 6-7) */}
         <div className="col-span-2 flex flex-col items-center justify-center">
           {match.status === 'LIVE' || match.status === 'FINISHED' ? (
-            <div className="px-2.5 sm:px-4 py-1.5 bg-gradient-to-r from-yellow-400 to-amber-400 text-black rounded-xl border-2 border-white shadow-md flex items-center justify-center gap-1.5">
+            <div className="px-2.5 sm:px-4 py-1.5 bg-gradient-to-r from-sky-400 to-blue-600 text-black rounded-xl border-2 border-white shadow-md flex items-center justify-center gap-1.5">
               <span className="font-black text-base sm:text-2xl text-black">
                 {match.homeScore}
               </span>
@@ -146,7 +146,7 @@ export const MatchRowItem: React.FC<MatchRowItemProps> = ({ match, onSelectMatch
               </span>
             </div>
           ) : (
-            <div className="px-3.5 py-1.5 bg-gradient-to-r from-yellow-400 to-amber-400 text-black rounded-xl border-2 border-white shadow-md flex items-center justify-center">
+            <div className="px-3.5 py-1.5 bg-gradient-to-r from-sky-400 to-blue-600 text-black rounded-xl border-2 border-white shadow-md flex items-center justify-center">
               <span className="font-black text-xs sm:text-sm text-black tracking-wider">
                 VS
               </span>
@@ -156,7 +156,7 @@ export const MatchRowItem: React.FC<MatchRowItemProps> = ({ match, onSelectMatch
 
         {/* Away Team (Cols 8-12): Name next to logo, Direct Logo */}
         <div className="col-span-5 flex items-center justify-end gap-2.5 sm:gap-4 min-w-0">
-          <span className="font-black text-xs sm:text-base text-white group-hover:text-yellow-400 transition-colors truncate text-right">
+          <span className="font-black text-xs sm:text-base text-white group-hover:text-sky-300 transition-colors truncate text-right">
             {match.awayTeam.name}
           </span>
           <img
@@ -173,12 +173,12 @@ export const MatchRowItem: React.FC<MatchRowItemProps> = ({ match, onSelectMatch
       </div>
 
       {/* Bottom Bar: Handicap Analysis & Tebak Skor Section */}
-      <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-zinc-800 text-xs">
+      <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-sky-500/20 text-xs">
         {/* Left: Handicap Analysis */}
         <div className="flex items-center gap-1.5 text-zinc-300 text-[11px] font-bold">
-          <Activity className="w-3.5 h-3.5 text-yellow-400 flex-shrink-0" />
+          <Activity className="w-3.5 h-3.5 text-sky-400 flex-shrink-0" />
           <span>Analisis Handicap:</span>
-          <span className="text-white font-extrabold bg-zinc-900 px-2 py-0.5 rounded-md border border-zinc-700">
+          <span className="text-white font-extrabold bg-sky-950/60 px-2 py-0.5 rounded-md border border-sky-500/30">
             {match.handicap || '0 : 0'}
           </span>
         </div>
@@ -200,7 +200,7 @@ export const MatchRowItem: React.FC<MatchRowItemProps> = ({ match, onSelectMatch
                   const val = e.target.value.replace(/[^0-9]/g, '');
                   setHomeGuess(val);
                 }}
-                className="w-8 h-8 text-center bg-zinc-900 text-white placeholder-zinc-500 font-black rounded-lg border border-zinc-700 focus:border-yellow-400 focus:bg-black focus:outline-none text-xs shadow-2xs"
+                className="w-8 h-8 text-center bg-sky-950/60 text-white placeholder-zinc-500 font-black rounded-lg border border-sky-500/30 focus:border-sky-400 focus:bg-sky-950 focus:outline-none text-xs shadow-2xs"
                 title="Tebakan Skor Tuan Rumah"
               />
 
@@ -218,7 +218,7 @@ export const MatchRowItem: React.FC<MatchRowItemProps> = ({ match, onSelectMatch
                   const val = e.target.value.replace(/[^0-9]/g, '');
                   setAwayGuess(val);
                 }}
-                className="w-8 h-8 text-center bg-zinc-900 text-white placeholder-zinc-500 font-black rounded-lg border border-zinc-700 focus:border-yellow-400 focus:bg-black focus:outline-none text-xs shadow-2xs"
+                className="w-8 h-8 text-center bg-sky-950/60 text-white placeholder-zinc-500 font-black rounded-lg border border-sky-500/30 focus:border-sky-400 focus:bg-sky-950 focus:outline-none text-xs shadow-2xs"
                 title="Tebakan Skor Tamu"
               />
 
@@ -229,7 +229,7 @@ export const MatchRowItem: React.FC<MatchRowItemProps> = ({ match, onSelectMatch
                 disabled={homeGuess.trim() === '' || awayGuess.trim() === ''}
                 className={`px-3.5 py-1.5 rounded-xl border font-black text-[11px] uppercase tracking-wider transition-all flex items-center gap-1 cursor-pointer ${
                   homeGuess.trim() !== '' && awayGuess.trim() !== ''
-                    ? 'bg-gradient-to-r from-yellow-400 to-amber-400 border-white text-black shadow-xs hover:brightness-105 active:scale-95'
+                    ? 'bg-gradient-to-r from-sky-400 to-blue-600 border-white text-black shadow-xs hover:brightness-105 active:scale-95'
                     : 'bg-zinc-800 border-zinc-700 text-zinc-500 cursor-not-allowed'
                 }`}
               >
@@ -239,10 +239,10 @@ export const MatchRowItem: React.FC<MatchRowItemProps> = ({ match, onSelectMatch
           ) : (
             /* Guessed Mode: Shows TEBAKAN ANDA & RESET Button */
             <div className="flex items-center gap-2">
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-zinc-900 border border-yellow-400 text-yellow-400 text-[11px] font-black shadow-2xs">
-                <Check className="w-3.5 h-3.5 text-yellow-400 flex-shrink-0" />
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-sky-950/60 border border-sky-400 text-sky-300 text-[11px] font-black shadow-2xs">
+                <Check className="w-3.5 h-3.5 text-sky-300 flex-shrink-0" />
                 <span>TEBAKAN ANDA:</span>
-                <span className="text-black bg-white px-2 py-0.5 rounded-md border border-yellow-400 text-xs font-black">
+                <span className="text-black bg-white px-2 py-0.5 rounded-md border border-sky-400 text-xs font-black">
                   {homeGuess} - {awayGuess}
                 </span>
               </div>
@@ -264,6 +264,3 @@ export const MatchRowItem: React.FC<MatchRowItemProps> = ({ match, onSelectMatch
     </div>
   );
 };
-
-
-

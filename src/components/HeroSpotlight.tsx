@@ -418,9 +418,9 @@ export const HeroSpotlight: React.FC<HeroSpotlightProps> = () => {
               LIGA TOP EROPA & UEFA CHAMPIONS LEAGUE
             </span>
             
-            <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-hero-3d tracking-normal sm:tracking-wide text-white uppercase leading-none pt-0.5 w-full whitespace-nowrap select-text cursor-text">
-              JALAK4D JADWAL & LIVE SCORE BOLA
-            </h1>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-hero-3d tracking-normal text-white uppercase leading-tight pt-0.5 w-full select-text cursor-text">
+  JALAK4D JADWAL & LIVE SCORE BOLA
+</h1>
           </div>
 
           {/* Middle: 20 Big Teams Logo Carousel */}

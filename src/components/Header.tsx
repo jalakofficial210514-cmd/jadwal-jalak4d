@@ -35,7 +35,7 @@ export const Header: React.FC<HeaderProps> = ({
               className="cursor-pointer flex items-center gap-2.5 sm:gap-3 group"
             >
               <img
-                src="https://ik.imagekit.io/nxr4ypxca/logo-wifi4d"
+                src="https://ik.imagekit.io/i22mizicx/jhk.png"
                 alt="WIFI4D Logo"
                 className="w-9 h-9 sm:w-11 sm:h-11 object-contain transition-transform group-hover:scale-105 group-active:scale-95 filter drop-shadow-[0_0_12px_rgba(234,179,8,0.6)]"
               />

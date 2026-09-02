@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Match } from '../types';
 import { MatchRowItem } from './MatchRowItem';
 import { LEAGUES } from '../data/mockData';
@@ -30,34 +30,7 @@ export const MatchList: React.FC<MatchListProps> = ({
   isESPNLive = true,
 }) => {
   const [statusFilter, setStatusFilter] = useState<'all' | 'LIVE' | 'TODAY' | 'UPCOMING' | 'FINISHED'>('all');
-  const [isZoomedOut67, setIsZoomedOut67] = useState<boolean>(false);
   const [isSearchFocused, setIsSearchFocused] = useState<boolean>(false);
-
-  // Detect browser zoom level (67% zoom vs 75%+)
-  useEffect(() => {
-    const checkZoom = () => {
-      const outer = window.outerWidth;
-      const inner = window.innerWidth;
-      if (outer && inner) {
-        const zoomRatio = outer / inner;
-        if (zoomRatio >= 1.4) {
-          setIsZoomedOut67(true);
-        } else {
-          setIsZoomedOut67(false);
-        }
-      } else {
-        if (inner >= 1800) {
-          setIsZoomedOut67(true);
-        } else {
-          setIsZoomedOut67(false);
-        }
-      }
-    };
-
-    checkZoom();
-    window.addEventListener('resize', checkZoom);
-    return () => window.removeEventListener('resize', checkZoom);
-  }, []);
 
   // Filter matches by search query, status, and league
   const filteredMatches = matches.filter((m) => {
@@ -93,9 +66,9 @@ export const MatchList: React.FC<MatchListProps> = ({
 
   return (
     <div className="space-y-6">
-      {/* Top Filter Bar (Yellow Container with Status on Row 1 + LIVE UPDATE at top-right, Leagues on Row 2 + Search Pill at bottom-right) */}
+      {/* Top Filter Bar */}
       <div className="glass-static p-4 space-y-3">
-        
+
         {/* Row 1: Status Filters + LIVE UPDATE (Top Right) */}
         <div className="flex flex-wrap items-center justify-between gap-2.5">
           <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-1 sm:pb-0">
@@ -149,8 +122,8 @@ export const MatchList: React.FC<MatchListProps> = ({
         </div>
 
         {/* Row 2: Leagues + Glowing Search Pill (Bottom Right) */}
-        <div className="flex flex-wrap items-center justify-between gap-2.5 pt-2 border-t border-black/10">
-          
+        <div className="flex flex-wrap items-center justify-between gap-2.5 pt-2 border-t border-sky-400/20">
+
           {/* League Quick Selector Pills */}
           <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar">
             <button
@@ -222,7 +195,7 @@ export const MatchList: React.FC<MatchListProps> = ({
                   className="w-5 h-3.5 rounded-sm object-cover shadow-xs border border-white flex-shrink-0"
                 />
                 <h3 className="font-black text-sm sm:text-lg text-white tracking-wide uppercase truncate">{leagueName}</h3>
-                <span className="text-[10px] sm:text-[11px] text-yellow-400 font-black bg-black px-2.5 py-0.5 rounded-full border border-white whitespace-nowrap flex-shrink-0">
+                <span className="text-[10px] sm:text-[11px] text-sky-300 font-black bg-sky-950/60 px-2.5 py-0.5 rounded-full border border-sky-400/50 whitespace-nowrap flex-shrink-0">
                   {leagueMatches.length} Laga
                 </span>
                 {isESPNLive && (
@@ -232,11 +205,11 @@ export const MatchList: React.FC<MatchListProps> = ({
                   </span>
                 )}
               </div>
-              <span className="text-[11px] sm:text-xs text-white font-extrabold bg-black/40 px-3 py-1 rounded-full border border-yellow-400 whitespace-nowrap flex-shrink-0">{leagueMatches[0].date}</span>
+              <span className="text-[11px] sm:text-xs text-white font-extrabold bg-sky-950/50 backdrop-blur-sm px-3 py-1 rounded-full border border-sky-400/60 whitespace-nowrap flex-shrink-0">{leagueMatches[0].date}</span>
             </div>
 
-            {/* Matches Boxes List - 2 columns at 67% zoom, 1 full-width column at 75%+ zoom */}
-            <div className={`grid ${isZoomedOut67 ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1'} gap-4 mt-3`}>
+            {/* Matches Boxes List - 2 columns (kiri & kanan) on tablet/desktop, 1 column on mobile */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3">
               {leagueMatches.map((match) => (
                 <MatchRowItem key={match.id} match={match} onSelectMatch={onSelectMatch} />
               ))}
@@ -245,9 +218,9 @@ export const MatchList: React.FC<MatchListProps> = ({
         ))
       ) : (
         <div className="glass-static p-10 sm:p-12 text-center space-y-3.5">
-          <Calendar className="w-12 h-12 text-black stroke-[2.5] mx-auto animate-bounce" />
-          <p className="font-black text-black text-lg sm:text-xl tracking-tight">Tidak ada pertandingan ditemukan</p>
-          <p className="text-sm font-bold text-black max-w-md mx-auto leading-relaxed">
+          <Calendar className="w-12 h-12 text-sky-300 stroke-[2.5] mx-auto animate-bounce" />
+          <p className="font-black text-white text-lg sm:text-xl tracking-tight">Tidak ada pertandingan ditemukan</p>
+          <p className="text-sm font-bold text-sky-100 max-w-md mx-auto leading-relaxed">
             Coba ubah kata kunci pencarian atau ganti filter status &amp; liga untuk melihat pertandingan lainnya.
           </p>
           <div className="pt-2">
@@ -258,7 +231,7 @@ export const MatchList: React.FC<MatchListProps> = ({
                 if (onClearSearch) onClearSearch();
                 else if (setSearchQuery) setSearchQuery('');
               }}
-              className="px-5 py-2.5 rounded-xl bg-black text-white border-2 border-white text-xs sm:text-sm font-black hover:bg-yellow-400 hover:text-black transition-all cursor-pointer shadow-md"
+              className="px-5 py-2.5 rounded-xl bg-blue-700 text-white border-2 border-sky-400 text-xs sm:text-sm font-black hover:bg-blue-600 hover:text-white transition-all cursor-pointer shadow-md"
             >
               Reset Semua Filter
             </button>

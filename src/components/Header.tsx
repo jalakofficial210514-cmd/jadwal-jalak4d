@@ -53,29 +53,29 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           {/* Navigation Items (Desktop) */}
-          <nav className="hidden md:flex items-center gap-2">
-            {navItems.map((item) => {
-              const isActive = activeTab === item.id;
-              return (
-                <button
-                  key={item.id}
-                  onClick={() => {
-                    setActiveTab(item.id);
-                    if (item.id === 'social') {
-                      window.scrollTo({ top: document.body.scrollHeight, behavior: 'auto' });
-                    }
-                  }}
-                  className={`relative px-4 py-2 rounded-xl text-xs font-black tracking-wider uppercase transition-all duration-75 cursor-pointer border-2 ${
-                    isActive
-                      ? 'text-black bg-gradient-to-r from-yellow-400 to-amber-400 border-white shadow-[0_2px_12px_rgba(234,179,8,0.6)]'
-                      : 'text-white bg-zinc-900 border-zinc-800 hover:text-yellow-400 hover:border-yellow-400'
-                  }`}
-                >
-                  {item.label}
-                </button>
-              );
-            })}
-          </nav>
+<nav className="hidden md:flex items-center gap-2">
+  {navItems.map((item) => {
+    const isActive = activeTab === item.id;
+    return (
+      <button
+        key={item.id}
+        onClick={() => {
+          setActiveTab(item.id);
+          if (item.id === 'social') {
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'auto' });
+          }
+        }}
+        className={`relative px-4 py-2 rounded-xl text-xs font-black tracking-wider uppercase transition-all duration-75 cursor-pointer border-2 ${
+          isActive
+            ? 'text-black bg-gradient-to-r from-sky-400 to-blue-500 border-white shadow-[0_2px_12px_rgba(14,165,233,0.6)]'
+            : 'text-white bg-zinc-900 border-zinc-800 hover:text-sky-400 hover:border-sky-400'
+        }`}
+      >
+        {item.label}
+      </button>
+    );
+  })}
+</nav>
 
           {/* Login Button (Right Side) */}
           <div className="flex items-center">

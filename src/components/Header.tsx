@@ -22,7 +22,7 @@ export const Header: React.FC<HeaderProps> = ({
   ];
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-black border-b-2 border-yellow-500 shadow-[0_4px_20px_rgba(234,179,8,0.3)]">
+    <header className="sticky top-0 z-40 w-full bg-black border-b-2 border-blue-700 shadow-[0_4px_20px_rgba(30,64,175,0.4)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
@@ -37,15 +37,15 @@ export const Header: React.FC<HeaderProps> = ({
               <img
                 src="https://ik.imagekit.io/i22mizicx/jhk.png"
                 alt="JALAK4D Logo"
-                className="w-9 h-9 sm:w-11 sm:h-11 object-contain transition-transform group-hover:scale-105 group-active:scale-95 filter drop-shadow-[0_0_12px_rgba(234,179,8,0.6)]"
+                className="w-9 h-9 sm:w-11 sm:h-11 object-contain transition-transform group-hover:scale-105 group-active:scale-95 filter drop-shadow-[0_0_12px_rgba(37,99,235,0.7)]"
               />
               <div className="flex flex-col">
                 <div className="flex items-center gap-1">
                   <span className="font-black text-xl sm:text-2xl tracking-wider text-white">
-                    JALAK<span className="text-yellow-400">4D</span>
+                    JALAK<span className="text-blue-500">4D</span>
                   </span>
                 </div>
-                <span className="text-[9px] sm:text-[11px] font-bold text-yellow-400 tracking-wider uppercase">
+                <span className="text-[9px] sm:text-[11px] font-bold text-blue-400 tracking-wider uppercase">
                   LIGA TOP EROPA & UCL
                 </span>
               </div>
@@ -53,29 +53,29 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           {/* Navigation Items (Desktop) */}
-<nav className="hidden md:flex items-center gap-2">
-  {navItems.map((item) => {
-    const isActive = activeTab === item.id;
-    return (
-      <button
-        key={item.id}
-        onClick={() => {
-          setActiveTab(item.id);
-          if (item.id === 'social') {
-            window.scrollTo({ top: document.body.scrollHeight, behavior: 'auto' });
-          }
-        }}
-        className={`relative px-4 py-2 rounded-xl text-xs font-black tracking-wider uppercase transition-all duration-75 cursor-pointer border-2 ${
-          isActive
-            ? 'text-black bg-gradient-to-r from-sky-400 to-blue-500 border-white shadow-[0_2px_12px_rgba(14,165,233,0.6)]'
-            : 'text-white bg-zinc-900 border-zinc-800 hover:text-sky-400 hover:border-sky-400'
-        }`}
-      >
-        {item.label}
-      </button>
-    );
-  })}
-</nav>
+          <nav className="hidden md:flex items-center gap-2">
+            {navItems.map((item) => {
+              const isActive = activeTab === item.id;
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => {
+                    setActiveTab(item.id);
+                    if (item.id === 'social') {
+                      window.scrollTo({ top: document.body.scrollHeight, behavior: 'auto' });
+                    }
+                  }}
+                  className={`relative px-4 py-2 rounded-xl text-xs font-black tracking-wider uppercase transition-all duration-75 cursor-pointer border-2 ${
+                    isActive
+                      ? 'text-black bg-gradient-to-r from-blue-500 to-blue-700 border-sky-400 shadow-[0_2px_12px_rgba(29,78,216,0.6)]'
+                      : 'text-white bg-zinc-900 border-zinc-800 hover:text-blue-400 hover:border-blue-400'
+                  }`}
+                >
+                  {item.label}
+                </button>
+              );
+            })}
+          </nav>
 
           {/* Login Button (Right Side) */}
           <div className="flex items-center">
@@ -106,7 +106,7 @@ export const Header: React.FC<HeaderProps> = ({
                 }}
                 className={`relative px-3 py-1 rounded-lg text-[10px] font-black tracking-wider uppercase whitespace-nowrap flex-shrink-0 cursor-pointer border ${
                   isActive
-                    ? 'text-black bg-yellow-400 border-white'
+                    ? 'text-white bg-blue-700 border-sky-400'
                     : 'text-zinc-300 bg-zinc-900 border-zinc-800'
                 }`}
               >

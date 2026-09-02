@@ -1,1 +1,0 @@
-Trying to be a good person.

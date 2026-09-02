@@ -89,7 +89,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen text-white bg-[#09090b] flex flex-col relative font-sans">
-      
+
       {/* Main Header */}
       <Header
         searchQuery={searchQuery}
@@ -104,7 +104,7 @@ export default function App() {
 
       {/* Main Body Layout - Single Scrollable Page showing all sections */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-1 pt-6 sm:pt-8 relative z-10 space-y-16">
-        
+
         {/* Section 1: Jadwal (Matches) */}
         <section id="matches" className="space-y-6 pt-2">
           {!searchQuery && selectedLeagueFilter === 'all' && (
@@ -127,10 +127,14 @@ export default function App() {
         </section>
 
         {/* Section 2: Prediksi */}
-        <section id="predictions" className="space-y-6 pt-6 border-t border-yellow-950/40">
+        <section id="predictions" className="space-y-6 pt-6 border-t border-sky-900/40">
           <div className="text-center pb-2">
-            <span className="text-xs font-black uppercase tracking-widest text-yellow-400">ANALISIS & PREDIKSI AKURAT</span>
-            <h2 className="text-2xl sm:text-3xl font-black text-white mt-1">Prediksi Pertandingan WIFI4D</h2>
+            <span className="text-xs font-black uppercase tracking-widest text-shine-blue">
+              ANALISIS & PREDIKSI AKURAT
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-white mt-1">
+              Prediksi Pertandingan <span className="text-shine-blue glow-blue">JALAK4D</span>
+            </h2>
           </div>
           <PredictionsView
             matches={matches}
@@ -139,21 +143,25 @@ export default function App() {
         </section>
 
         {/* Section 3: Klasemen */}
-        <section id="standings" className="space-y-6 pt-6 border-t border-yellow-950/40">
+        <section id="standings" className="space-y-6 pt-6 border-t border-sky-900/40">
           <div className="text-center pb-2">
-            <span className="text-xs font-black uppercase tracking-widest text-yellow-400">TANGGA KLASEMEN RESMI</span>
-            <h2 className="text-2xl sm:text-3xl font-black text-white mt-1">Klasemen Liga & Turnamen</h2>
+            <span className="text-xs font-black uppercase tracking-widest text-shine-blue">
+              TANGGA KLASEMEN RESMI
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-white mt-1">
+              Klasemen Liga & Turnamen
+            </h2>
           </div>
           <StandingsView />
         </section>
 
         {/* Section 4: Top Score & Stats */}
-        <section id="stats" className="space-y-6 pt-6 border-t border-yellow-950/40 pb-8">
+        <section id="stats" className="space-y-6 pt-6 border-t border-sky-900/40 pb-8">
           <div className="text-center pb-2">
-            <span className="text-xs sm:text-sm font-black uppercase tracking-widest text-yellow-400">
+            <span className="text-xs sm:text-sm font-black uppercase tracking-widest text-shine-blue">
               STATISTIK PEMAIN MUSIM 2026/2027
             </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mt-1 uppercase tracking-tight drop-shadow-md">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-shine-blue glow-blue mt-1 uppercase tracking-tight">
               TOP SCORE & ASSIST
             </h2>
           </div>

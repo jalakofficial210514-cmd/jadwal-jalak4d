@@ -14,37 +14,37 @@
   }
 }
 
-/* 3D Bold & Wide Display Typography */
+/* 3D Bold & Wide Display Typography (bayangan biru) */
 .font-hero-3d {
   font-family: 'Unbounded', 'Plus Jakarta Sans', sans-serif !important;
   font-weight: 900;
   text-shadow: 
-    0 1px 0 #b45309,
-    0 2px 0 #92400e,
-    0 3px 0 #78350f,
-    0 4px 0 #451a03,
+    0 1px 0 #0369a1,
+    0 2px 0 #075985,
+    0 3px 0 #0c4a6e,
+    0 4px 0 #082f49,
     0 6px 14px rgba(0, 0, 0, 0.65),
     0 10px 24px rgba(0, 0, 0, 0.4);
 }
 
-/* Custom Thick Solid Gold/Yellow Cards & Panels */
+/* Custom Solid Blue Cards & Panels */
 .glass {
-  background: #eab308;
-  border: 3px solid #facc15;
-  box-shadow: 0 8px 32px rgba(234, 179, 8, 0.45);
+  background: #0ea5e9;
+  border: 3px solid #38bdf8;
+  box-shadow: 0 8px 32px rgba(14, 165, 233, 0.45);
   border-radius: 1.25rem;
 }
 
 .glass-static {
-  background: #eab308;
-  border: 3px solid #facc15;
-  box-shadow: 0 8px 32px rgba(234, 179, 8, 0.45);
+  background: #0ea5e9;
+  border: 3px solid #38bdf8;
+  box-shadow: 0 8px 32px rgba(14, 165, 233, 0.45);
   border-radius: 1.25rem;
 }
 
 .glass-sidebar {
   background: #000000;
-  border-right: 2px solid #eab308;
+  border-right: 2px solid #0ea5e9;
 }
 
 .klasemen-tab {
@@ -57,18 +57,18 @@
   cursor: pointer;
   background-color: #000000;
   color: #ffffff;
-  border: 2px solid #eab308;
+  border: 2px solid #0ea5e9;
 }
 
 .klasemen-tab:hover {
-  background-color: #facc15;
+  background-color: #38bdf8;
   color: #000000;
   border-color: #ffffff;
 }
 
-/* Yellow Glow Button (Pill Theme & Clean Style) */
+/* Blue Glow Button (Pill Theme & Clean Style) */
 .btn-gold-glow {
-  background: linear-gradient(180deg, #fef08a 0%, #facc15 50%, #eab308 100%);
+  background: linear-gradient(180deg, #bae6fd 0%, #38bdf8 50%, #0ea5e9 100%);
   border: 2px solid #ffffff;
   border-radius: 9999px;
   color: #000000;
@@ -84,23 +84,23 @@
 
 .btn-gold-glow:hover,
 .btn-gold-glow:focus-visible {
-  background: linear-gradient(180deg, #ffffff 0%, #fef08a 35%, #facc15 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #bae6fd 35%, #38bdf8 100%);
   border-color: #ffffff;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
   transform: translateY(-1px);
 }
 
 .btn-gold-glow:active {
-  background: linear-gradient(180deg, #fde047 0%, #eab308 50%, #ca8a04 100%);
+  background: linear-gradient(180deg, #7dd3fc 0%, #0ea5e9 50%, #0284c7 100%);
   border-color: #ffffff;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   transform: scale(0.97);
 }
 
-/* Wide Expanding Gold Glow for Modals */
+/* Wide Expanding Blue Glow for Modals */
 .modal-gold-glow {
-  box-shadow: 0 0 35px rgba(250, 204, 21, 0.75), 0 0 80px rgba(234, 179, 8, 0.5), 0 0 130px rgba(245, 158, 11, 0.35), 0 25px 60px rgba(0, 0, 0, 0.75);
-  border: 2.5px solid #facc15;
+  box-shadow: 0 0 35px rgba(56, 189, 248, 0.75), 0 0 80px rgba(14, 165, 233, 0.5), 0 0 130px rgba(2, 132, 199, 0.35), 0 25px 60px rgba(0, 0, 0, 0.75);
+  border: 2.5px solid #38bdf8;
 }
 
 /* Touch & Hover Glow for Inner Modal Components */
@@ -113,13 +113,13 @@
 
 .avatar-touch-glow:hover,
 .avatar-touch-glow:active {
-  box-shadow: 0 0 16px rgba(250, 204, 21, 0.8), 0 0 30px rgba(234, 179, 8, 0.45);
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.8), 0 0 30px rgba(14, 165, 233, 0.45);
   transform: scale(1.05);
 }
 
 .stat-box-touch-glow {
-  background: #fffdf0;
-  border: 2px solid #fde047;
+  background: #f0f9ff;
+  border: 2px solid #7dd3fc;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-tap-highlight-color: transparent;
@@ -129,14 +129,14 @@
 .stat-box-touch-glow:hover,
 .stat-box-touch-glow:active,
 .stat-box-touch-glow:focus-visible {
-  background: #fefce8;
-  border-color: #facc15;
-  box-shadow: 0 0 15px rgba(250, 204, 21, 0.75), 0 0 28px rgba(234, 179, 8, 0.4);
+  background: #e0f2fe;
+  border-color: #38bdf8;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.75), 0 0 28px rgba(14, 165, 233, 0.4);
   transform: translateY(-2px);
 }
 
 .btn-kembali-glow {
-  background: linear-gradient(180deg, #fef08a 0%, #facc15 50%, #eab308 100%);
+  background: linear-gradient(180deg, #bae6fd 0%, #38bdf8 50%, #0ea5e9 100%);
   border: 2px solid #ffffff;
   border-radius: 9999px;
   color: #000000;
@@ -152,23 +152,23 @@
 
 .btn-kembali-glow:hover,
 .btn-kembali-glow:focus-visible {
-  background: linear-gradient(180deg, #ffffff 0%, #fef08a 35%, #facc15 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #bae6fd 35%, #38bdf8 100%);
   border-color: #ffffff;
-  box-shadow: 0 0 18px rgba(250, 204, 21, 0.85), 0 0 32px rgba(234, 179, 8, 0.45);
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.85), 0 0 32px rgba(14, 165, 233, 0.45);
   transform: translateY(-1px);
 }
 
 .btn-kembali-glow:active {
-  background: linear-gradient(180deg, #fde047 0%, #eab308 50%, #ca8a04 100%);
+  background: linear-gradient(180deg, #7dd3fc 0%, #0ea5e9 50%, #0284c7 100%);
   border-color: #ffffff;
-  box-shadow: 0 0 22px rgba(250, 204, 21, 0.95), 0 0 40px rgba(234, 179, 8, 0.55);
+  box-shadow: 0 0 22px rgba(56, 189, 248, 0.95), 0 0 40px rgba(14, 165, 233, 0.55);
   transform: scale(0.97);
 }
 
-/* Match Detail / Statistics Modal Close Button (Follows Login Button Style WITHOUT glow) */
+/* Match Detail / Statistics Modal Close Button */
 .btn-close-stat-x,
 .btn-close-modal-glow {
-  background: linear-gradient(180deg, #fef08a 0%, #facc15 50%, #eab308 100%);
+  background: linear-gradient(180deg, #bae6fd 0%, #38bdf8 50%, #0ea5e9 100%);
   color: #000000;
   border: 2px solid #ffffff;
   border-radius: 9999px;
@@ -199,9 +199,9 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-/* Login Button Style without Glow (Used for Klasemen 5 Liga tabs and LIVE UPDATE) */
+/* Login Button Style without Glow */
 .btn-login-style {
-  background: linear-gradient(180deg, #fef08a 0%, #facc15 50%, #eab308 100%);
+  background: linear-gradient(180deg, #bae6fd 0%, #38bdf8 50%, #0ea5e9 100%);
   color: #000000;
   border: 2px solid #ffffff;
   font-weight: 900;
@@ -221,9 +221,9 @@
   transform: scale(0.97);
 }
 
-/* Search Pill in Match Filter matching LIVE UPDATE style with active glow */
+/* Search Pill in Match Filter */
 .search-pill-style {
-  background: linear-gradient(180deg, #fef08a 0%, #facc15 50%, #eab308 100%);
+  background: linear-gradient(180deg, #bae6fd 0%, #38bdf8 50%, #0ea5e9 100%);
   color: #000000;
   border: 2px solid #ffffff;
   font-weight: 900;
@@ -240,9 +240,9 @@
 .search-pill-style:focus-within,
 .search-pill-style.is-focused,
 .search-pill-style.has-value {
-  background: linear-gradient(180deg, #ffffff 0%, #fef08a 35%, #facc15 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #bae6fd 35%, #38bdf8 100%);
   border-color: #ffffff;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.95), 0 0 35px rgba(250, 204, 21, 0.9), 0 4px 15px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.95), 0 0 35px rgba(56, 189, 248, 0.9), 0 4px 15px rgba(0, 0, 0, 0.35);
   transform: scale(1.02);
 }
 
@@ -258,7 +258,7 @@
 }
 
 .btn-login-style-inactive:hover {
-  border-color: #facc15;
+  border-color: #38bdf8;
   color: #ffffff;
 }
 
@@ -267,11 +267,11 @@
 }
 
 .klasemen-tab.active {
-  background-color: #facc15;
+  background-color: #38bdf8;
   color: #000000;
   border-color: #ffffff;
   font-weight: 900;
-  box-shadow: 0 0 16px rgba(250, 204, 21, 0.8), 0 4px 12px rgba(250, 204, 21, 0.6);
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.8), 0 4px 12px rgba(56, 189, 248, 0.6);
 }
 
 .league-card-header {
@@ -283,10 +283,10 @@
   margin-bottom: 1rem;
 }
 
-/* Custom Soft Scrollbar */
+/* Custom Soft Scrollbar (biru) */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #facc15 #09090b;
+  scrollbar-color: #38bdf8 #09090b;
 }
 
 ::-webkit-scrollbar {
@@ -306,12 +306,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #facc15;
+  background: #38bdf8;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #eab308;
+  background: #0ea5e9;
 }
 
 ::-webkit-scrollbar-corner {
@@ -329,7 +329,7 @@
 
 .custom-gold-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: #facc15 #09090b;
+  scrollbar-color: #38bdf8 #09090b;
 }
 
 .custom-gold-scrollbar::-webkit-scrollbar {
@@ -348,12 +348,12 @@
 }
 
 .custom-gold-scrollbar::-webkit-scrollbar-thumb {
-  background: #facc15;
+  background: #38bdf8;
   border-radius: 9999px;
 }
 
 .custom-gold-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #eab308;
+  background: #0ea5e9;
 }
 
 @keyframes fadeIn {
@@ -376,6 +376,7 @@
 
 /* =========================================================
    Uiverse.io Social Media Glassmorphism & Animated Gradients
+   (tidak diubah — warna sosmed mengikuti brand masing-masing)
    ========================================================= */
 ul.example-2 {
   list-style: none;
@@ -419,7 +420,6 @@ ul.example-2 {
   top: -46px;
 }
 
-/* Base glassmorphism anchor */
 .icon-content a {
   position: relative;
   overflow: hidden;
@@ -445,7 +445,6 @@ ul.example-2 {
     0 6px 16px rgba(0, 0, 0, 0.22);
 }
 
-/* Specific glass borders */
 .icon-content[data-social="telegram"] a {
   border: 1px solid rgba(0, 136, 204, 0.6);
   box-shadow: inset 0 0 6px rgba(0, 136, 204, 0.4), 0 0 10px rgba(0, 136, 204, 0.5), 0 6px 16px rgba(0, 0, 0, 0.25);
@@ -487,7 +486,6 @@ ul.example-2 {
   box-shadow: inset 0 0 6px rgba(234, 76, 137, 0.4), 0 0 10px rgba(234, 76, 137, 0.5), 0 6px 16px rgba(0, 0, 0, 0.25);
 }
 
-/* Common shine sweep effect */
 .icon-content a::before {
   content: "";
   position: absolute;
@@ -533,7 +531,6 @@ ul.example-2 {
   border-radius: 20%;
 }
 
-/* Gradient animation keyframes */
 @keyframes premiumGradient {
   0% {
     background-position: 0% 50%;
@@ -546,7 +543,6 @@ ul.example-2 {
   }
 }
 
-/* Telegram – dark premium blue gradient */
 .icon-content a[data-social="telegram"] .filled,
 .icon-content[data-social="telegram"] a .filled,
 .icon-content a[data-social="telegram"] ~ .tooltip,
@@ -560,7 +556,6 @@ ul.example-2 {
   box-shadow: inset 0 0 12px rgba(0, 136, 204, 0.5), 0 0 24px rgba(0, 136, 204, 0.7);
 }
 
-/* X / Twitter – dark premium monochrome gradient */
 .icon-content a[data-social="x"] .filled,
 .icon-content[data-social="x"] a .filled,
 .icon-content a[data-social="x"] ~ .tooltip,
@@ -578,7 +573,6 @@ ul.example-2 {
   box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.3), 0 0 24px rgba(255, 255, 255, 0.5);
 }
 
-/* WhatsApp – dark premium emerald gradient */
 .icon-content a[data-social="whatsapp"] .filled,
 .icon-content[data-social="whatsapp"] a .filled,
 .icon-content a[data-social="whatsapp"] ~ .tooltip,
@@ -592,7 +586,6 @@ ul.example-2 {
   box-shadow: inset 0 0 12px rgba(37, 211, 102, 0.5), 0 0 24px rgba(37, 211, 102, 0.7);
 }
 
-/* Instagram – dark premium magenta/rose gradient */
 .icon-content a[data-social="instagram"] .filled,
 .icon-content[data-social="instagram"] a .filled,
 .icon-content a[data-social="instagram"] ~ .tooltip,
@@ -606,7 +599,6 @@ ul.example-2 {
   box-shadow: inset 0 0 12px rgba(225, 48, 108, 0.5), 0 0 24px rgba(225, 48, 108, 0.7);
 }
 
-/* Pinterest – dark premium red gradient */
 .icon-content a[data-social="pinterest"] .filled,
 .icon-content[data-social="pinterest"] a .filled,
 .icon-content a[data-social="pinterest"] ~ .tooltip,
@@ -620,7 +612,6 @@ ul.example-2 {
   box-shadow: inset 0 0 12px rgba(189, 8, 28, 0.5), 0 0 24px rgba(189, 8, 28, 0.7);
 }
 
-/* TikTok – dark premium cyan/magenta gradient */
 .icon-content a[data-social="tiktok"] .filled,
 .icon-content[data-social="tiktok"] a .filled,
 .icon-content a[data-social="tiktok"] ~ .tooltip,
@@ -634,7 +625,6 @@ ul.example-2 {
   box-shadow: inset 0 0 12px rgba(254, 44, 85, 0.5), 0 0 24px rgba(37, 244, 238, 0.6);
 }
 
-/* Spotify – dark premium green gradient */
 .icon-content a[data-social="spotify"] .filled,
 .icon-content[data-social="spotify"] a .filled,
 .icon-content a[data-social="spotify"] ~ .tooltip,
@@ -648,7 +638,6 @@ ul.example-2 {
   box-shadow: inset 0 0 12px rgba(29, 185, 84, 0.5), 0 0 24px rgba(29, 185, 84, 0.7);
 }
 
-/* Dribbble – dark premium pink gradient */
 .icon-content a[data-social="dribbble"] .filled,
 .icon-content[data-social="dribbble"] a .filled,
 .icon-content a[data-social="dribbble"] ~ .tooltip,
@@ -661,15 +650,14 @@ ul.example-2 {
   border: 1px solid rgba(234, 76, 137, 0.6);
   box-shadow: inset 0 0 12px rgba(234, 76, 137, 0.5), 0 0 24px rgba(234, 76, 137, 0.7);
 }
-/* ====== EFEK KILATAN BIRU MUDA ↔ BIRU TUA ====== */
 
-/* Teks gradasi biru berkilau (berjalan terus) */
+/* ====== EFEK KILATAN BIRU MUDA ↔ BIRU TUA ====== */
 .text-shine-blue {
   background: linear-gradient(
     110deg,
-    #7dd3fc 10%,   /* biru muda terang */
-    #0ea5e9 30%,   /* biru cerah */
-    #1e40af 50%,   /* biru tua */
+    #7dd3fc 10%,
+    #0ea5e9 30%,
+    #1e40af 50%,
     #0ea5e9 70%,
     #7dd3fc 90%
   );
@@ -686,13 +674,11 @@ ul.example-2 {
   }
 }
 
-/* Cahaya biru di sekeliling teks */
 .glow-blue {
   filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.55))
           drop-shadow(0 0 20px rgba(30, 64, 175, 0.35));
 }
 
-/* Kedip (flash) untuk label kecil — opsional */
 .flash-blue {
   animation: kedip-biru 1.8s ease-in-out infinite;
 }
@@ -701,4 +687,3 @@ ul.example-2 {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.5; }
 }
-

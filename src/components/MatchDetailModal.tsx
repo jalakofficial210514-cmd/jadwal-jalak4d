@@ -23,7 +23,7 @@ const SoccerBallIcon = ({ className = "text-[13px] leading-none select-none flex
   <span className={className} role="img" aria-label="goal">⚽</span>
 );
 
-// Icon Sepatu (Football Boot dengan aksen Biru Muda seperti di Gambar 2)
+// Icon Sepatu (Football Boot dengan aksen Biru Muda)
 const SoccerBootIcon = ({ className = "w-3.5 h-3.5 flex-shrink-0" }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none">
     <path
@@ -284,9 +284,9 @@ export const MatchDetailModal: React.FC<MatchDetailModalProps> = ({ match, onClo
   const stats = isPlayed ? (liveStats || match.stats || zeroStats) : zeroStats;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs overflow-y-auto no-scrollbar">
       {/* Clean Off-White / White Modal Card with Wide Glowing Effect */}
-      <div className="relative w-full max-w-lg bg-white text-slate-900 p-6 rounded-[28px] modal-gold-glow space-y-5 my-8 max-h-[90vh] overflow-y-auto font-sans animate-scale-up">
+      <div className="relative w-full max-w-lg bg-white text-slate-900 p-6 rounded-[28px] modal-gold-glow space-y-5 my-8 max-h-[90vh] overflow-y-auto no-scrollbar font-sans animate-scale-up">
         {/* Close Button - Styled after Login Button without glow */}
         <button
           onClick={onClose}
@@ -299,7 +299,7 @@ export const MatchDetailModal: React.FC<MatchDetailModalProps> = ({ match, onClo
 
         {/* Modal Header Title */}
         <div className="text-center pt-1 flex flex-col items-center justify-center gap-1">
-          <h2 className="text-amber-800 font-black text-sm sm:text-base uppercase tracking-wider">
+          <h2 className="text-blue-800 font-black text-sm sm:text-base uppercase tracking-wider">
             {match.leagueName || 'FASE GRUP - MATCHDAY 3'}
           </h2>
           {isLiveESPN && (
@@ -338,7 +338,7 @@ export const MatchDetailModal: React.FC<MatchDetailModalProps> = ({ match, onClo
                 <>
                   <div className="font-black text-3xl sm:text-4xl text-slate-900 flex items-center gap-2 tracking-tight">
                     <span>{liveScores?.home ?? 0}</span>
-                    <span className="text-amber-600 font-light text-2xl">:</span>
+                    <span className="text-blue-600 font-light text-2xl">:</span>
                     <span>{liveScores?.away ?? 0}</span>
                   </div>
                   <span
@@ -353,10 +353,10 @@ export const MatchDetailModal: React.FC<MatchDetailModalProps> = ({ match, onClo
                 </>
               ) : (
                 <>
-                  <div className="font-black text-2xl sm:text-3xl text-amber-900 tracking-wider">
+                  <div className="font-black text-2xl sm:text-3xl text-blue-700 tracking-wider">
                     VS
                   </div>
-                  <span className="mt-2 px-3 py-1 rounded-full text-[11px] font-black tracking-wider uppercase shadow-2xs bg-amber-500 text-slate-950">
+                  <span className="mt-2 px-3 py-1 rounded-full text-[11px] font-black tracking-wider uppercase shadow-2xs bg-blue-600 text-white">
                     BELUM DIMULAI
                   </span>
                 </>
@@ -494,12 +494,12 @@ export const MatchDetailModal: React.FC<MatchDetailModalProps> = ({ match, onClo
         {/* Date & Venue Info */}
         <div className="space-y-1 text-center text-xs text-slate-600 font-semibold pt-1">
           <div className="flex items-center justify-center gap-1.5">
-            <Calendar className="w-3.5 h-3.5 text-amber-700" />
+            <Calendar className="w-3.5 h-3.5 text-blue-700" />
             <span>
               {match.date || '31 Juli 2026'} - {match.time || '17:00 WIB'}
             </span>
           </div>
-          <div className="flex items-center justify-center gap-1.5 text-amber-800 font-bold">
+          <div className="flex items-center justify-center gap-1.5 text-blue-800 font-bold">
             <MapPin className="w-3.5 h-3.5" />
             <span>{venue || match.venue || 'Gelora Bung Karno Stadium, Jakarta'}</span>
           </div>
@@ -509,11 +509,11 @@ export const MatchDetailModal: React.FC<MatchDetailModalProps> = ({ match, onClo
         {h2hList && h2hList.length > 0 && (
           <div className="space-y-2 pt-2 border-t border-slate-200 mt-2">
             <div className="flex items-center justify-between">
-              <span className="flex items-center gap-1.5 text-xs font-black text-amber-900 uppercase tracking-wide">
-                <History className="w-4 h-4 text-amber-600" />
+              <span className="flex items-center gap-1.5 text-xs font-black text-blue-900 uppercase tracking-wide">
+                <History className="w-4 h-4 text-blue-600" />
                 Rekor Head-to-Head (H2H)
               </span>
-              <span className="text-[10px] font-bold text-amber-800 bg-amber-100 px-2.5 py-0.5 rounded-full border border-amber-300">
+              <span className="text-[10px] font-bold text-blue-800 bg-blue-100 px-2.5 py-0.5 rounded-full border border-blue-300">
                 {h2hList.length} Pertemuan Terakhir
               </span>
             </div>
@@ -523,13 +523,13 @@ export const MatchDetailModal: React.FC<MatchDetailModalProps> = ({ match, onClo
                 <div key={idx} className="flex items-center justify-between text-xs py-1.5 px-3 rounded-xl bg-slate-50 border border-slate-200">
                   <span className="text-[10px] font-semibold text-slate-500 w-24 flex-shrink-0">{h.date}</span>
                   <div className="flex items-center gap-1.5 flex-1 justify-center min-w-0 px-1 font-bold">
-                    <span className={`truncate text-right flex-1 text-[11px] ${h.winner === 'home' ? 'text-amber-800 font-extrabold' : 'text-slate-700'}`}>
+                    <span className={`truncate text-right flex-1 text-[11px] ${h.winner === 'home' ? 'text-blue-800 font-extrabold' : 'text-slate-700'}`}>
                       {h.homeTeam}
                     </span>
-                    <span className="px-2 py-0.5 bg-slate-900 text-yellow-400 rounded-md font-mono font-black border border-slate-700 text-[10px] flex-shrink-0">
+                    <span className="px-2 py-0.5 bg-slate-900 text-sky-400 rounded-md font-mono font-black border border-slate-700 text-[10px] flex-shrink-0">
                       {h.score}
                     </span>
-                    <span className={`truncate text-left flex-1 text-[11px] ${h.winner === 'away' ? 'text-amber-800 font-extrabold' : 'text-slate-700'}`}>
+                    <span className={`truncate text-left flex-1 text-[11px] ${h.winner === 'away' ? 'text-blue-800 font-extrabold' : 'text-slate-700'}`}>
                       {h.awayTeam}
                     </span>
                   </div>
@@ -543,12 +543,12 @@ export const MatchDetailModal: React.FC<MatchDetailModalProps> = ({ match, onClo
 
         {/* Match Statistics Header */}
         <div className="text-center space-y-1">
-          <h4 className="text-amber-800 font-black text-xs uppercase tracking-widest">
+          <h4 className="text-blue-800 font-black text-xs uppercase tracking-widest">
             MATCH STATISTICS
           </h4>
           {!isPlayed && (
-            <div className="flex items-center justify-center gap-2 py-1.5 px-3 rounded-xl bg-amber-500/10 border border-amber-400/40 text-amber-900 text-[11px] font-bold">
-              <Clock className="w-3.5 h-3.5 text-amber-700 flex-shrink-0" />
+            <div className="flex items-center justify-center gap-2 py-1.5 px-3 rounded-xl bg-blue-500/10 border border-blue-400/40 text-blue-900 text-[11px] font-bold">
+              <Clock className="w-3.5 h-3.5 text-blue-700 flex-shrink-0" />
               <span>Statistik Belum Diketahui (Pertandingan Belum Dimulai)</span>
             </div>
           )}
@@ -556,7 +556,7 @@ export const MatchDetailModal: React.FC<MatchDetailModalProps> = ({ match, onClo
 
         {loading ? (
           <div className="flex flex-col items-center justify-center py-6 gap-2">
-            <Loader2 className="w-6 h-6 text-amber-600 animate-spin" />
+            <Loader2 className="w-6 h-6 text-blue-600 animate-spin" />
             <span className="text-xs font-bold text-slate-400">Sinkronisasi Data Pertandingan...</span>
           </div>
         ) : (

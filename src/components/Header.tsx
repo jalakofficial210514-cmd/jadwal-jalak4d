@@ -42,7 +42,7 @@ export const Header: React.FC<HeaderProps> = ({
               <div className="flex flex-col">
                 <div className="flex items-center gap-1">
                   <span className="font-black text-xl sm:text-2xl tracking-wider text-white">
-                    WIFI<span className="text-yellow-400">4D</span>
+                    JALAK<span className="text-yellow-400">4D</span>
                   </span>
                 </div>
                 <span className="text-[9px] sm:text-[11px] font-bold text-yellow-400 tracking-wider uppercase">

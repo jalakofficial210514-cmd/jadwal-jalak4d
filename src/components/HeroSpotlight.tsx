@@ -328,14 +328,30 @@ export const HeroSpotlight: React.FC<HeroSpotlightProps> = () => {
   }, []);
 
   // ====== AUTO-SCROLL PELAN (running text) — berhenti saat hover/sentuh ======
+  const autoScrollPosRef = useRef<number | null>(null);
+  const lastTouchRef = useRef<number>(0);
+
   useEffect(() => {
     let rafId: number;
 
     const autoScrollStep = () => {
       const container = scrollContainerRef.current;
-      if (container && !isAutoScrollPausedRef.current && !isResettingRef.current) {
-        container.scrollLeft += 0.35; // kecepatan pelan (naikkan = lebih cepat)
+      const touchGrace = Date.now() - lastTouchRef.current < 1200;
+      const isPaused = isAutoScrollPausedRef.current || touchGrace;
+
+      if (container && !isPaused && !isResettingRef.current) {
+        // Posisi disimpan pecahan di ref — scrollLeft browser dibulatkan,
+        // jadi += 0.35 langsung ke scrollLeft tidak akan pernah bergerak.
+        if (autoScrollPosRef.current === null) {
+          autoScrollPosRef.current = container.scrollLeft;
+        }
+        autoScrollPosRef.current += 0.35; // kecepatan pelan (naikkan = lebih cepat)
+        container.scrollLeft = autoScrollPosRef.current;
+      } else if (container) {
+        // Saat pause/reset/manual: ikuti posisi terkini agar lanjut dari situ
+        autoScrollPosRef.current = container.scrollLeft;
       }
+
       rafId = requestAnimationFrame(autoScrollStep);
     };
 

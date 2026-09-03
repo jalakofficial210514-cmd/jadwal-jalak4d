@@ -38,7 +38,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
             </a>
 
             <p className="text-zinc-300 text-sm sm:text-base leading-relaxed max-w-lg font-bold">
-              Sumber informasi resmi seputar Liga Top Eropa (Premier League, La Liga, Serie A, Bundesliga, Ligue 1). Dapatkan update terbaru, jadwal pertandingan, klasemen, dan statistik terlengkap.
+              Pusat informasi terpercaya seputar Liga Top Eropa, mulai dari Premier League, La Liga, Serie A, Bundesliga, hingga Ligue 1. Temukan berita sepak bola terbaru, jadwal pertandingan, hasil laga, klasemen, statistik tim, dan berbagai informasi menarik lainnya secara lengkap dan terkini.
             </p>
 
             {/* Social media icons */}

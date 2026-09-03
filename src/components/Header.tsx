@@ -80,7 +80,7 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Login Button (Right Side) */}
           <div className="flex items-center">
             <a
-              href="https://mauaja.link/pesonawifi/"
+              href="https://fuiyo.click/linkjalak"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-gold-glow flex items-center justify-center px-6 sm:px-8 py-2 rounded-full text-black text-xs sm:text-sm font-black tracking-wider uppercase transition-all cursor-pointer"

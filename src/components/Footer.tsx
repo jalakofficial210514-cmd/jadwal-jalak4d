@@ -32,13 +32,13 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
                   </span>
                 </div>
                 <span className="text-[10px] sm:text-xs font-black text-amber-600 tracking-widest uppercase">
-                  5 Liga Top Eropa
+                  PREDIKSI & LIVE SCORE Eropa
                 </span>
               </div>
             </a>
 
             <p className="text-slate-800 text-sm sm:text-base leading-relaxed max-w-lg font-bold">
-              Sumber informasi resmi seputar 5 Liga Top Eropa (Premier League, La Liga, Serie A, Bundesliga, Ligue 1). Dapatkan update terbaru, jadwal pertandingan, klasemen, dan statistik terlengkap.
+              Sumber informasi resmi seputar Liga Top Eropa (Premier League, La Liga, Serie A, Bundesliga, Ligue 1). Dapatkan update terbaru, jadwal pertandingan, klasemen, dan statistik terlengkap.
             </p>
 
             {/* Social media icons */}

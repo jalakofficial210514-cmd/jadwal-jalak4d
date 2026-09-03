@@ -15,20 +15,20 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
           {/* Brand & Socials (Col 1-6) */}
           <div className="space-y-5 md:col-span-6">
             <a
-              href="http://coastalcarolinaconnection.com/"
+              href="https://jalak4d.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="cursor-pointer inline-flex items-center gap-3 sm:gap-3.5 group"
             >
               <img
-                src="https://ik.imagekit.io/nxr4ypxca/logo-wifi4d"
-                alt="WIFI4D Logo"
+                src="https://ik.imagekit.io/i22mizicx/jhk.png"
+                alt="JALAK4D Logo"
                 className="w-10 h-10 sm:w-12 sm:h-12 object-contain transition-transform group-hover:scale-105 group-active:scale-95 filter drop-shadow-[0_2px_8px_rgba(0,0,0,0.15)]"
               />
               <div className="flex flex-col">
                 <div className="flex items-center gap-1">
                   <span className="font-black text-2xl sm:text-3xl tracking-wider text-slate-900">
-                    WIFI<span className="text-amber-500">4D</span>
+                    JALAK<span className="text-amber-500">4D</span>
                   </span>
                 </div>
                 <span className="text-[10px] sm:text-xs font-black text-amber-600 tracking-widest uppercase">
@@ -47,7 +47,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
                 {/* Telegram */}
                 <li className="icon-content" data-social="telegram">
                   <a
-                    href="https://t.me/Wifi4D"
+                    href="https://telegram.me/Jalak4DTerpercaya"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Telegram"
@@ -64,7 +64,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
                 {/* WhatsApp */}
                 <li className="icon-content" data-social="whatsapp">
                   <a
-                    href="https://mauaja.link/wawifi"
+                    href="http://mauaja.link/wajalak"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="WhatsApp"
@@ -193,7 +193,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
 
         {/* Bottom Copyright line */}
         <div className="pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left text-xs text-slate-500 font-semibold">
-          <p>© 2026 WIFI4D Portal 5 Liga Top Eropa. All rights reserved.</p>
+          <p>© 2026 JALAk4D PREDIKSI & LIVE SCORE Liga Top Eropa. All rights reserved.</p>
           <p className="text-amber-700 font-bold">Light Edition 2026</p>
         </div>
 

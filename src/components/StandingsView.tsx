@@ -358,9 +358,9 @@ export const StandingsView: React.FC = () => {
       <div className="glass-static p-6 space-y-4">
         <div className="flex items-center justify-between flex-wrap gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-2 h-8 bg-amber-500 rounded-full shadow-2xs"></div>
+            <div className="w-2 h-8 bg-sky-400 rounded-full shadow-2xs"></div>
             <div>
-              <h2 className="text-xl sm:text-2xl font-black text-slate-900 uppercase tracking-tight">
+              <h2 className="text-xl sm:text-2xl font-black text-white uppercase tracking-tight">
                 KLASEMEN LIGA TOP EROPA & UEFA CHAMPIONS LEAGUE 2026/2027
               </h2>
             </div>
@@ -406,8 +406,8 @@ export const StandingsView: React.FC = () => {
       <div className="glass-static p-4 sm:p-6 overflow-x-auto relative">
         <div className="min-w-[760px]">
           {/* Card Header */}
-          <div className="flex items-center justify-between gap-3 mb-4 pb-3 border-b border-slate-200">
-            <div className="font-extrabold text-sm sm:text-base text-slate-900 uppercase tracking-wider flex items-center gap-2.5">
+          <div className="flex items-center justify-between gap-3 mb-4 pb-3 border-b border-sky-400/30">
+            <div className="font-extrabold text-sm sm:text-base text-white uppercase tracking-wider flex items-center gap-2.5">
               <img
                 src={currentConfig.flag}
                 alt=""
@@ -422,7 +422,7 @@ export const StandingsView: React.FC = () => {
           </div>
 
           {/* Legend bar spanning full width to the very end */}
-          <div className="mb-6 py-2.5 px-4 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs text-slate-700 font-semibold gap-6 whitespace-nowrap w-full">
+          <div className="mb-6 py-2.5 px-4 rounded-xl bg-sky-950/50 border border-sky-500/20 flex items-center justify-between text-xs text-zinc-300 font-semibold gap-6 whitespace-nowrap w-full">
             <div className="flex items-center gap-4 sm:gap-6 flex-shrink-0">
               {activeLeague === 'ucl' ? (
                 <>
@@ -435,7 +435,7 @@ export const StandingsView: React.FC = () => {
                     Posisi 9-24: Play-off Knockout
                   </span>
                   <span className="flex items-center gap-2">
-                    <span className="w-3 h-3 rounded-[3px] bg-slate-400 shadow-2xs"></span>
+                    <span className="w-3 h-3 rounded-[3px] bg-zinc-500 shadow-2xs"></span>
                     Posisi 25-36: Tersingkir
                   </span>
                 </>
@@ -522,12 +522,12 @@ export const StandingsView: React.FC = () => {
               )}
             </div>
 
-            <div className="flex items-center gap-4 border-l border-slate-300 pl-4 flex-shrink-0">
+            <div className="flex items-center gap-4 border-l border-sky-500/30 pl-4 flex-shrink-0">
               <span className="flex items-center gap-1.5">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-2xs"></span> Win
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-slate-400 shadow-2xs"></span> Draw
+                <span className="w-2.5 h-2.5 rounded-full bg-zinc-500 shadow-2xs"></span> Draw
               </span>
               <span className="flex items-center gap-1.5">
                 <span className="w-2.5 h-2.5 rounded-full bg-rose-500 shadow-2xs"></span> Lose
@@ -537,25 +537,25 @@ export const StandingsView: React.FC = () => {
 
           {loading ? (
             <div className="flex flex-col items-center justify-center py-16 gap-3">
-              <Loader2 className="w-8 h-8 text-amber-500 animate-spin" />
-              <p className="text-xs text-slate-500 font-bold uppercase tracking-wider">Memuat Data Klasemen...</p>
+              <Loader2 className="w-8 h-8 text-sky-400 animate-spin" />
+              <p className="text-xs text-zinc-400 font-bold uppercase tracking-wider">Memuat Data Klasemen...</p>
             </div>
           ) : (
             <div>
               {/* Table Header */}
-            <div className="flex items-center text-[11px] font-black uppercase tracking-wider text-black border-b-2 border-black pb-2 mb-2 px-3">
+            <div className="flex items-center text-[11px] font-black uppercase tracking-wider text-sky-300 border-b-2 border-sky-400/40 pb-2 mb-2 px-3">
               <div className="w-8 text-center">RANK</div>
               <div className="flex-1 min-w-[160px] text-left pl-3">CLUB</div>
               <div className="flex items-center text-center">
-                <div className="w-10 text-center text-black">MP</div>
-                <div className="w-10 text-center text-black">W</div>
-                <div className="w-10 text-center text-black">D</div>
-                <div className="w-10 text-center text-black">L</div>
-                <div className="w-11 text-center text-black font-bold">GF</div>
-                <div className="w-11 text-center text-black font-bold">GA</div>
-                <div className="w-12 text-center text-black font-bold">GD</div>
-                <div className="w-12 text-center text-black font-black bg-white px-1 py-0.5 rounded border border-black shadow-xs">PTS</div>
-                <div className="w-28 text-center text-black font-black">LAST 5</div>
+                <div className="w-10 text-center">MP</div>
+                <div className="w-10 text-center">W</div>
+                <div className="w-10 text-center">D</div>
+                <div className="w-10 text-center">L</div>
+                <div className="w-11 text-center font-bold">GF</div>
+                <div className="w-11 text-center font-bold">GA</div>
+                <div className="w-12 text-center font-bold">GD</div>
+                <div className="w-12 text-center font-black bg-sky-950/70 text-sky-300 px-1 py-0.5 rounded border border-sky-400/60 shadow-xs">PTS</div>
+                <div className="w-28 text-center font-black">LAST 5</div>
               </div>
             </div>
 
@@ -564,26 +564,26 @@ export const StandingsView: React.FC = () => {
               {standingsData.map((row) => {
                 const zoneBorder =
                   row.zone === 'ucl'
-                    ? 'border-l-[6px] border-l-blue-600'
+                    ? 'border-l-[6px] border-l-blue-500'
                     : row.zone === 'ucl-qualifier'
-                    ? 'border-l-[6px] border-l-purple-600'
+                    ? 'border-l-[6px] border-l-purple-500'
                     : row.zone === 'uel'
                     ? 'border-l-[6px] border-l-orange-500'
                     : row.zone === 'conference'
-                    ? 'border-l-[6px] border-l-emerald-600'
+                    ? 'border-l-[6px] border-l-emerald-500'
                     : row.zone === 'playoff'
                     ? 'border-l-[6px] border-l-amber-600'
                     : row.zone === 'relegation'
-                    ? 'border-l-[6px] border-l-rose-600'
-                    : 'border-l-[6px] border-l-slate-300';
+                    ? 'border-l-[6px] border-l-rose-500'
+                    : 'border-l-[6px] border-l-zinc-600';
 
                 return (
                   <div
                     key={row.team.id}
-                    className={`flex items-center p-2.5 sm:p-3 rounded-xl bg-white text-slate-900 border-2 border-black shadow-md hover:border-yellow-400 hover:scale-[1.005] transition-all text-xs ${zoneBorder}`}
+                    className={`flex items-center p-2.5 sm:p-3 rounded-xl bg-sky-950/40 backdrop-blur-md text-white border-2 border-sky-500/30 shadow-md hover:border-sky-300 hover:scale-[1.005] transition-all text-xs ${zoneBorder}`}
                   >
                     <div className="w-8 text-center flex items-center justify-center">
-                      <span className="text-black font-black text-sm">
+                      <span className="text-sky-300 font-black text-sm">
                         {row.position}
                       </span>
                     </div>
@@ -601,20 +601,20 @@ export const StandingsView: React.FC = () => {
                           e.currentTarget.src = DEFAULT_TEAM_LOGO;
                         }}
                       />
-                      <span className="font-black text-slate-950 text-sm sm:text-base truncate">{row.team.name}</span>
+                      <span className="font-black text-white text-sm sm:text-base truncate">{row.team.name}</span>
                     </div>
 
                     <div className="flex items-center text-center">
-                      <div className="w-10 text-center text-slate-900 font-extrabold">{row.played}</div>
-                      <div className="w-10 text-center text-slate-900 font-extrabold">{row.won}</div>
-                      <div className="w-10 text-center text-slate-900 font-extrabold">{row.drawn}</div>
-                      <div className="w-10 text-center text-slate-900 font-extrabold">{row.lost}</div>
-                      <div className="w-11 text-center text-slate-900 font-extrabold">{row.goalsFor}</div>
-                      <div className="w-11 text-center text-slate-900 font-extrabold">{row.goalsAgainst}</div>
-                      <div className={`w-12 text-center font-extrabold ${row.goalDifference > 0 ? 'text-emerald-700' : row.goalDifference < 0 ? 'text-rose-700' : 'text-slate-900'}`}>
+                      <div className="w-10 text-center text-zinc-200 font-extrabold">{row.played}</div>
+                      <div className="w-10 text-center text-zinc-200 font-extrabold">{row.won}</div>
+                      <div className="w-10 text-center text-zinc-200 font-extrabold">{row.drawn}</div>
+                      <div className="w-10 text-center text-zinc-200 font-extrabold">{row.lost}</div>
+                      <div className="w-11 text-center text-zinc-200 font-extrabold">{row.goalsFor}</div>
+                      <div className="w-11 text-center text-zinc-200 font-extrabold">{row.goalsAgainst}</div>
+                      <div className={`w-12 text-center font-extrabold ${row.goalDifference > 0 ? 'text-emerald-400' : row.goalDifference < 0 ? 'text-rose-400' : 'text-zinc-200'}`}>
                         {row.goalDifference > 0 ? `+${row.goalDifference}` : row.goalDifference}
                       </div>
-                      <div className="w-12 text-center font-black text-base text-black bg-gradient-to-r from-yellow-300 to-amber-400 px-1 py-0.5 rounded border border-black shadow-xs">{row.points}</div>
+                      <div className="w-12 text-center font-black text-base text-black bg-gradient-to-r from-sky-400 to-blue-600 px-1 py-0.5 rounded border border-white shadow-xs">{row.points}</div>
                       <div className="w-28 flex items-center justify-center gap-1.5">
                         {Array.from({ length: 5 }).map((_, slotIdx) => {
                           const formItem = (row.team.form || [])[slotIdx];
@@ -626,7 +626,7 @@ export const StandingsView: React.FC = () => {
                             const dotBg = isWin
                               ? 'bg-emerald-500 shadow-2xs'
                               : isDraw
-                              ? 'bg-slate-400 shadow-2xs'
+                              ? 'bg-zinc-500 shadow-2xs'
                               : 'bg-rose-500 shadow-2xs';
 
                             const titleText = isWin
@@ -647,7 +647,7 @@ export const StandingsView: React.FC = () => {
                           return (
                             <span
                               key={slotIdx}
-                              className="w-2.5 h-2.5 rounded-full border border-slate-300 bg-slate-200 cursor-default"
+                              className="w-2.5 h-2.5 rounded-full border border-zinc-600 bg-zinc-700/50 cursor-default"
                               title="Belum bertanding"
                             ></span>
                           );

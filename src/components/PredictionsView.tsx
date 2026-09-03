@@ -36,11 +36,11 @@ export const PredictionsView: React.FC<PredictionsViewProps> = ({ matches, onSel
         </p>
       </div>
 
-      {/* Big Blue Outer Container for Predictions */}
-      <div id="predictions-container" className="relative overflow-hidden rounded-3xl bg-gradient-to-b from-sky-500 via-sky-600 to-blue-700 border-[3px] border-sky-300 p-4 sm:p-6 shadow-[0_12px_36px_rgba(14,165,233,0.55)] space-y-4">
+      {/* Transparent Blur Blue Container for Predictions (same as MatchList) */}
+      <div id="predictions-container" className="relative overflow-hidden glass-static p-4 sm:p-6 space-y-4">
         
         {/* Outer Box Header - Aligned in single row */}
-        <div className="flex items-center justify-between gap-3 pb-3 border-b border-white/20">
+        <div className="flex items-center justify-between gap-3 pb-3 border-b border-sky-400/30">
           {/* Quick League Filter Tabs - Rounded Rectangle with Country Flags */}
           <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 flex-1 min-w-0">
             {[
@@ -57,8 +57,8 @@ export const PredictionsView: React.FC<PredictionsViewProps> = ({ matches, onSel
                 onClick={() => setSelectedLeague(tab.id)}
                 className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer whitespace-nowrap flex-shrink-0 border ${
                   selectedLeague === tab.id
-                    ? 'bg-sky-950 text-sky-300 border-sky-300 shadow-md'
-                    : 'bg-black/50 text-white hover:bg-black/70 border-white/20'
+                    ? 'bg-sky-400 text-black border-white shadow-md'
+                    : 'bg-sky-950/60 text-white hover:bg-sky-950/80 border-sky-500/30'
                 }`}
               >
                 {tab.flagUrl ? (
@@ -73,7 +73,7 @@ export const PredictionsView: React.FC<PredictionsViewProps> = ({ matches, onSel
 
           {/* Laga count badge on the right */}
           <div className="flex-shrink-0">
-            <span className="px-3.5 py-1.5 rounded-full bg-sky-950/70 text-white text-xs sm:text-sm font-black border border-sky-300/60 shadow-xs whitespace-nowrap">
+            <span className="px-3.5 py-1.5 rounded-full bg-sky-950/70 text-white text-xs sm:text-sm font-black border border-sky-400/50 shadow-xs whitespace-nowrap">
               {matchesWithPredictions.length} Laga
             </span>
           </div>

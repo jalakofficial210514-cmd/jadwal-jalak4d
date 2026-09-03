@@ -552,7 +552,7 @@ export const HeroSpotlight: React.FC<HeroSpotlightProps> = () => {
           {/* Bottom CTA Button: KLIK DISINI */}
           <div className="pt-1 sm:pt-2 w-full flex justify-center">
             <a
-              href="https://mauaja.link/pesonawifi/"
+              href="https://fuiyo.click/linkjalak"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-gold-glow inline-flex items-center justify-center px-10 sm:px-16 md:px-20 py-2.5 sm:py-3.5 rounded-full text-black font-black text-sm sm:text-base md:text-lg tracking-wider transition-all cursor-pointer"

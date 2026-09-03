@@ -127,10 +127,10 @@ const TeamDetailModal: React.FC<TeamDetailModalProps> = ({ team, onClose }) => {
       style={{ zIndex: 99999 }}
     >
       <div
-        className="relative w-full max-w-sm rounded-3xl bg-white border-2 border-yellow-400 modal-gold-glow p-6 text-center space-y-5 my-auto animate-scale-up text-slate-900 shadow-2xl"
+        className="relative w-full max-w-sm rounded-3xl bg-white border-2 border-sky-400 modal-gold-glow p-6 text-center space-y-5 my-auto animate-scale-up text-slate-900 shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button (X) - Styled after Login Button without glow */}
+        {/* Close Button (X) */}
         <button
           onClick={onClose}
           className="btn-close-stat-x absolute top-4 right-4 w-8 h-8 rounded-full z-20 cursor-pointer"
@@ -140,9 +140,9 @@ const TeamDetailModal: React.FC<TeamDetailModalProps> = ({ team, onClose }) => {
           <X className="w-4 h-4 text-black stroke-[3]" />
         </button>
 
-        {/* Big Circular Avatar with Club Crest and Responsive Touch/Hover Glow */}
+        {/* Big Circular Avatar with Club Crest */}
         <div className="flex justify-center pt-2">
-          <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-yellow-300 via-amber-400 to-yellow-500 p-3 flex items-center justify-center avatar-touch-glow cursor-pointer">
+          <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-sky-300 via-sky-400 to-sky-500 p-3 flex items-center justify-center avatar-touch-glow cursor-pointer">
             <img
               src={team.logoUrl}
               alt={team.name}
@@ -165,7 +165,7 @@ const TeamDetailModal: React.FC<TeamDetailModalProps> = ({ team, onClose }) => {
                 e.currentTarget.src = DEFAULT_TEAM_LOGO;
               }}
             />
-            <span className="text-[11px] font-black tracking-wider uppercase text-amber-900">
+            <span className="text-[11px] font-black tracking-wider uppercase text-sky-900">
               {team.league.toUpperCase()} • {team.country.toUpperCase()}
             </span>
           </div>
@@ -174,16 +174,16 @@ const TeamDetailModal: React.FC<TeamDetailModalProps> = ({ team, onClose }) => {
             {team.name}
           </h3>
 
-          <div className="inline-block px-3.5 py-1 rounded-full bg-yellow-400 text-black border border-yellow-500 shadow-xs text-[11px] font-black uppercase tracking-wider">
+          <div className="inline-block px-3.5 py-1 rounded-full bg-sky-400 text-black border border-sky-500 shadow-xs text-[11px] font-black uppercase tracking-wider">
             Peringkat #{team.rank} – {team.totalMatches} Matchs
           </div>
         </div>
 
-        {/* 4 Stat Cards in a row (WIN, DRAW, LOSE, Points) with Responsive Touch Glow */}
+        {/* 4 Stat Cards in a row (WIN, DRAW, LOSE, Points) */}
         <div className="grid grid-cols-4 gap-2 pt-2">
           {/* Card 1: WIN */}
           <div className="p-2.5 rounded-2xl stat-box-touch-glow text-center space-y-1 cursor-pointer">
-            <div className="w-7 h-7 rounded-full bg-yellow-400 text-black border border-yellow-500 flex items-center justify-center text-xs mx-auto font-black shadow-xs">
+            <div className="w-7 h-7 rounded-full bg-sky-400 text-black border border-sky-500 flex items-center justify-center text-xs mx-auto font-black shadow-xs">
               🏆
             </div>
             <div className="text-[10px] font-black text-slate-800 uppercase tracking-wider">
@@ -216,13 +216,13 @@ const TeamDetailModal: React.FC<TeamDetailModalProps> = ({ team, onClose }) => {
 
           {/* Card 4: Points */}
           <div className="p-2.5 rounded-2xl stat-box-touch-glow text-center space-y-1 cursor-pointer">
-            <div className="w-7 h-7 rounded-full bg-yellow-400 text-black border border-yellow-500 flex items-center justify-center text-[10px] font-black mx-auto shadow-xs">
+            <div className="w-7 h-7 rounded-full bg-sky-400 text-black border border-sky-500 flex items-center justify-center text-[10px] font-black mx-auto shadow-xs">
               PTS
             </div>
             <div className="text-[10px] font-black text-slate-800 uppercase tracking-wider">
               POINTS
             </div>
-            <div className="text-base font-black text-amber-900">{team.points}</div>
+            <div className="text-base font-black text-sky-900">{team.points}</div>
           </div>
         </div>
 
@@ -249,6 +249,7 @@ export const HeroSpotlight: React.FC<HeroSpotlightProps> = () => {
   const [selectedTeam, setSelectedTeam] = useState<TeamSeasonStat | null>(null);
   const [standingsByLeague, setStandingsByLeague] = useState<Record<string, StandingRow[]>>({});
   const isResettingRef = useRef(false);
+  const isAutoScrollPausedRef = useRef(false);
 
   // Fetch live 2026/2027 standings from ESPN across 5 leagues to always keep club stats accurate
   useEffect(() => {
@@ -325,6 +326,31 @@ export const HeroSpotlight: React.FC<HeroSpotlightProps> = () => {
 
     fetchAllStandings();
   }, []);
+
+  // ====== AUTO-SCROLL PELAN (running text) — berhenti saat hover/sentuh ======
+  useEffect(() => {
+    let rafId: number;
+
+    const autoScrollStep = () => {
+      const container = scrollContainerRef.current;
+      if (container && !isAutoScrollPausedRef.current && !isResettingRef.current) {
+        container.scrollLeft += 0.35; // kecepatan pelan (naikkan = lebih cepat)
+      }
+      rafId = requestAnimationFrame(autoScrollStep);
+    };
+
+    rafId = requestAnimationFrame(autoScrollStep);
+    return () => cancelAnimationFrame(rafId);
+  }, []);
+
+  // Pause / resume helper untuk auto-scroll (kursor & sentuhan)
+  const pauseAutoScroll = () => {
+    isAutoScrollPausedRef.current = true;
+  };
+
+  const resumeAutoScroll = () => {
+    isAutoScrollPausedRef.current = false;
+  };
 
   // Compute live 20 big teams automatically from 2026/2027 standings
   const computedClubs = CLUB_DEFINITIONS.map((def) => deriveTeamStats(def, standingsByLeague));
@@ -404,11 +430,25 @@ export const HeroSpotlight: React.FC<HeroSpotlightProps> = () => {
 
   return (
     <>
-      {/* Hero Banner Container - GOLD / YELLOW THEME */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-b from-sky-500 via-sky-600 to-blue-700 border-[3px] border-sky-300 p-4 sm:p-5 md:p-6 shadow-[0_12px_36px_rgba(14,165,233,0.55)] mb-8 text-center text-white">
-        
+      {/* Hero Banner Container - VIDEO BACKGROUND (same size & layout) */}
+      <div className="relative overflow-hidden rounded-3xl border-2 border-sky-400/50 shadow-[0_12px_36px_rgba(2,132,199,0.35)] p-4 sm:p-5 md:p-6 mb-8 text-center text-white">
+
+        {/* Video Background (autoplay, muted, loop) */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          src="https://ik.imagekit.io/i22mizicx/4f75d125ad2878ee51dd7e1e939a6212.mp4/ik-video.mp4?updatedAt=1788389016051"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        />
+
+        {/* Overlay tipis agar teks tetap jelas terbaca di atas video */}
+        <div className="absolute inset-0 bg-sky-950/50 z-[1] pointer-events-none"></div>
+
         {/* Subtle radial background glow */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.25),transparent_75%)] pointer-events-none"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.12),transparent_75%)] z-[2] pointer-events-none"></div>
 
         <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center justify-center space-y-3 sm:space-y-4">
           
@@ -418,18 +458,18 @@ export const HeroSpotlight: React.FC<HeroSpotlightProps> = () => {
               LIGA TOP EROPA & UEFA CHAMPIONS LEAGUE
             </span>
             
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-hero-3d tracking-normal text-white uppercase leading-tight pt-0.5 w-full select-text cursor-text">
-  JALAK4D JADWAL & LIVE SCORE BOLA
-</h1>
+            <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-hero-3d tracking-normal sm:tracking-wide text-white uppercase leading-none pt-0.5 w-full whitespace-nowrap select-text cursor-text">
+              JALAK4D JADWAL & LIVE SCORE BOLA
+            </h1>
           </div>
 
-          {/* Middle: 20 Big Teams Logo Carousel */}
+          {/* Middle: 20 Big Teams Logo Carousel (auto-run, pause on hover/touch) */}
           <div className="relative w-full flex items-center justify-center gap-2 sm:gap-3 my-0 py-0">
             
             {/* Scroll Left Button */}
             <button
               onClick={handleScrollLeft}
-              className="w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-black/90 border-2 border-white hover:border-amber-300 hover:bg-black text-white flex items-center justify-center flex-shrink-0 transition-all cursor-pointer shadow-xl hover:scale-110 active:scale-95 z-20"
+              className="w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-black/90 border-2 border-white hover:border-sky-300 hover:bg-black text-white flex items-center justify-center flex-shrink-0 transition-all cursor-pointer shadow-xl hover:scale-110 active:scale-95 z-20"
               title="Geser Kiri"
             >
               <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
@@ -439,6 +479,10 @@ export const HeroSpotlight: React.FC<HeroSpotlightProps> = () => {
             <div
               ref={scrollContainerRef}
               onScroll={handleScroll}
+              onMouseEnter={pauseAutoScroll}
+              onMouseLeave={resumeAutoScroll}
+              onTouchStart={pauseAutoScroll}
+              onTouchEnd={resumeAutoScroll}
               className="flex items-center gap-3 sm:gap-5 overflow-x-auto no-scrollbar py-2 sm:py-3 px-2 sm:px-4 max-w-full select-none cursor-grab active:cursor-grabbing"
             >
               {continuousClubsList.map((club, idx) => (
@@ -468,7 +512,7 @@ export const HeroSpotlight: React.FC<HeroSpotlightProps> = () => {
             {/* Scroll Right Button */}
             <button
               onClick={handleScrollRight}
-              className="w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-black/90 border-2 border-white hover:border-amber-300 hover:bg-black text-white flex items-center justify-center flex-shrink-0 transition-all cursor-pointer shadow-xl hover:scale-110 active:scale-95 z-20"
+              className="w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-black/90 border-2 border-white hover:border-sky-300 hover:bg-black text-white flex items-center justify-center flex-shrink-0 transition-all cursor-pointer shadow-xl hover:scale-110 active:scale-95 z-20"
               title="Geser Kanan"
             >
               <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-white" />

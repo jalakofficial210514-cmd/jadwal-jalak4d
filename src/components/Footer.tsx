@@ -6,7 +6,7 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
   return (
-    <footer className="mt-16 border-t border-slate-200 bg-slate-100/90 text-slate-600 text-sm py-14 relative z-10">
+    <footer className="mt-16 border-t border-sky-400/30 bg-sky-950/40 backdrop-blur-md text-zinc-300 text-sm py-14 relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Main Footer Row */}
@@ -23,21 +23,21 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
               <img
                 src="https://ik.imagekit.io/i22mizicx/jhk.png"
                 alt="JALAK4D Logo"
-                className="w-10 h-10 sm:w-12 sm:h-12 object-contain transition-transform group-hover:scale-105 group-active:scale-95 filter drop-shadow-[0_2px_8px_rgba(0,0,0,0.15)]"
+                className="w-10 h-10 sm:w-12 sm:h-12 object-contain transition-transform group-hover:scale-105 group-active:scale-95 filter drop-shadow-[0_0_12px_rgba(56,189,248,0.6)]"
               />
               <div className="flex flex-col">
                 <div className="flex items-center gap-1">
-                  <span className="font-black text-2xl sm:text-3xl tracking-wider text-slate-900">
-                    JALAK<span className="text-amber-500">4D</span>
+                  <span className="font-black text-2xl sm:text-3xl tracking-wider text-white">
+                    JALAK<span className="text-sky-400">4D</span>
                   </span>
                 </div>
-                <span className="text-[10px] sm:text-xs font-black text-amber-600 tracking-widest uppercase">
+                <span className="text-[10px] sm:text-xs font-black text-sky-300 tracking-widest uppercase">
                   PREDIKSI & LIVE SCORE Eropa
                 </span>
               </div>
             </a>
 
-            <p className="text-slate-800 text-sm sm:text-base leading-relaxed max-w-lg font-bold">
+            <p className="text-zinc-300 text-sm sm:text-base leading-relaxed max-w-lg font-bold">
               Sumber informasi resmi seputar Liga Top Eropa (Premier League, La Liga, Serie A, Bundesliga, Ligue 1). Dapatkan update terbaru, jadwal pertandingan, klasemen, dan statistik terlengkap.
             </p>
 
@@ -81,16 +81,16 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
             </div>
           </div>
 
-          {/* Navigation Columns - Menu (Title Case with larger size & comfortable spacing) */}
+          {/* Navigation Columns - Menu */}
           <div className="md:col-span-3 space-y-4">
-            <h4 className="font-black text-slate-900 text-base sm:text-lg tracking-wide border-b-2 border-amber-400 pb-1.5 inline-block">
+            <h4 className="font-black text-white text-base sm:text-lg tracking-wide border-b-2 border-sky-400 pb-1.5 inline-block">
               Menu
             </h4>
-            <ul className="space-y-3 font-bold text-slate-800 text-sm sm:text-base">
+            <ul className="space-y-3 font-bold text-zinc-300 text-sm sm:text-base">
               <li>
                 <button
                   onClick={() => setActiveTab('matches')}
-                  className="hover:text-amber-600 transition-colors cursor-pointer flex items-center gap-2 hover:translate-x-1 duration-150"
+                  className="hover:text-sky-300 transition-colors cursor-pointer flex items-center gap-2 hover:translate-x-1 duration-150"
                 >
                   Jadwal
                 </button>
@@ -98,7 +98,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
               <li>
                 <button
                   onClick={() => setActiveTab('predictions')}
-                  className="hover:text-amber-600 transition-colors cursor-pointer flex items-center gap-2 hover:translate-x-1 duration-150"
+                  className="hover:text-sky-300 transition-colors cursor-pointer flex items-center gap-2 hover:translate-x-1 duration-150"
                 >
                   Prediksi
                 </button>
@@ -106,7 +106,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
               <li>
                 <button
                   onClick={() => setActiveTab('standings')}
-                  className="hover:text-amber-600 transition-colors cursor-pointer flex items-center gap-2 hover:translate-x-1 duration-150"
+                  className="hover:text-sky-300 transition-colors cursor-pointer flex items-center gap-2 hover:translate-x-1 duration-150"
                 >
                   Klasemen
                 </button>
@@ -114,7 +114,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
               <li>
                 <button
                   onClick={() => setActiveTab('stats')}
-                  className="hover:text-amber-600 transition-colors cursor-pointer flex items-center gap-2 hover:translate-x-1 duration-150"
+                  className="hover:text-sky-300 transition-colors cursor-pointer flex items-center gap-2 hover:translate-x-1 duration-150"
                 >
                   Top Score
                 </button>
@@ -122,7 +122,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
               <li>
                 <button
                   onClick={() => setActiveTab('social')}
-                  className="hover:text-amber-600 transition-colors cursor-pointer flex items-center gap-2 hover:translate-x-1 duration-150"
+                  className="hover:text-sky-300 transition-colors cursor-pointer flex items-center gap-2 hover:translate-x-1 duration-150"
                 >
                   Social Media
                 </button>
@@ -130,18 +130,18 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
             </ul>
           </div>
 
-          {/* Bantuan Column (Title Case with larger size & comfortable spacing) */}
+          {/* Bantuan Column */}
           <div className="md:col-span-3 space-y-4">
-            <h4 className="font-black text-slate-900 text-base sm:text-lg tracking-wide border-b-2 border-amber-400 pb-1.5 inline-block">
+            <h4 className="font-black text-white text-base sm:text-lg tracking-wide border-b-2 border-sky-400 pb-1.5 inline-block">
               Bantuan
             </h4>
-            <ul className="space-y-3 font-extrabold text-slate-900 text-sm sm:text-base">
+            <ul className="space-y-3 font-extrabold text-zinc-300 text-sm sm:text-base">
               <li>
                 <a
                   href="http://coastalcarolinaconnection.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-amber-600 transition-colors cursor-pointer flex items-center gap-2 hover:translate-x-1 duration-150"
+                  className="hover:text-sky-300 transition-colors cursor-pointer flex items-center gap-2 hover:translate-x-1 duration-150"
                 >
                   Statistik Kami
                 </a>
@@ -151,7 +151,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
                   href="http://coastalcarolinaconnection.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-amber-600 transition-colors cursor-pointer flex items-center gap-2 hover:translate-x-1 duration-150"
+                  className="hover:text-sky-300 transition-colors cursor-pointer flex items-center gap-2 hover:translate-x-1 duration-150"
                 >
                   Kontak
                 </a>
@@ -161,7 +161,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
                   href="http://coastalcarolinaconnection.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-amber-600 transition-colors cursor-pointer flex items-center gap-2 hover:translate-x-1 duration-150"
+                  className="hover:text-sky-300 transition-colors cursor-pointer flex items-center gap-2 hover:translate-x-1 duration-150"
                 >
                   Kebijakan Privasi
                 </a>
@@ -171,7 +171,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
                   href="http://coastalcarolinaconnection.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-amber-600 transition-colors cursor-pointer flex items-center gap-2 hover:translate-x-1 duration-150"
+                  className="hover:text-sky-300 transition-colors cursor-pointer flex items-center gap-2 hover:translate-x-1 duration-150"
                 >
                   Syarat & Ketentuan
                 </a>
@@ -181,7 +181,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
                   href="http://coastalcarolinaconnection.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-amber-600 transition-colors cursor-pointer flex items-center gap-2 hover:translate-x-1 duration-150"
+                  className="hover:text-sky-300 transition-colors cursor-pointer flex items-center gap-2 hover:translate-x-1 duration-150"
                 >
                   FAQ
                 </a>
@@ -192,9 +192,9 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
         </div>
 
         {/* Bottom Copyright line */}
-        <div className="pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left text-xs text-slate-500 font-semibold">
-          <p>© 2026 JALAk4D PREDIKSI & LIVE SCORE Liga Top Eropa. All rights reserved.</p>
-          <p className="text-amber-700 font-bold">Light Edition 2026</p>
+        <div className="pt-6 border-t border-sky-400/20 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left text-xs text-zinc-400 font-semibold">
+          <p>© 2026 JALAK4D PREDIKSI & LIVE SCORE Liga Top Eropa. All rights reserved.</p>
+          <p className="text-sky-300 font-bold">Light Edition 2026</p>
         </div>
 
       </div>

@@ -359,12 +359,23 @@ export const HeroSpotlight: React.FC<HeroSpotlightProps> = () => {
     return () => cancelAnimationFrame(rafId);
   }, []);
 
-  // Pause / resume helper untuk auto-scroll (kursor & sentuhan)
+    // Pause / resume helper untuk auto-scroll (kursor & sentuhan)
   const pauseAutoScroll = () => {
     isAutoScrollPausedRef.current = true;
   };
 
   const resumeAutoScroll = () => {
+    isAutoScrollPausedRef.current = false;
+  };
+
+  // Sentuhan HP: berhenti saat disentuh, lanjut lagi 1.2 detik setelah dilepas
+  // (jeda memberi waktu momentum scroll selesai supaya tidak "melompat")
+  const handleTouchStart = () => {
+    isAutoScrollPausedRef.current = true;
+  };
+
+  const handleTouchEnd = () => {
+    lastTouchRef.current = Date.now();
     isAutoScrollPausedRef.current = false;
   };
 
@@ -480,7 +491,11 @@ export const HeroSpotlight: React.FC<HeroSpotlightProps> = () => {
           </div>
 
           {/* Middle: 20 Big Teams Logo Carousel (auto-run, pause on hover/touch) */}
-          <div className="relative w-full flex items-center justify-center gap-2 sm:gap-3 my-0 py-0">
+          <div
+            className="relative w-full flex items-center justify-center gap-2 sm:gap-3 my-0 py-0"
+            onMouseEnter={pauseAutoScroll}
+            onMouseLeave={resumeAutoScroll}
+          >
             
             {/* Scroll Left Button */}
             <button
@@ -495,10 +510,8 @@ export const HeroSpotlight: React.FC<HeroSpotlightProps> = () => {
             <div
               ref={scrollContainerRef}
               onScroll={handleScroll}
-              onMouseEnter={pauseAutoScroll}
-              onMouseLeave={resumeAutoScroll}
-              onTouchStart={pauseAutoScroll}
-              onTouchEnd={resumeAutoScroll}
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
               className="flex items-center gap-3 sm:gap-5 overflow-x-auto no-scrollbar py-2 sm:py-3 px-2 sm:px-4 max-w-full select-none cursor-grab active:cursor-grabbing"
             >
               {continuousClubsList.map((club, idx) => (

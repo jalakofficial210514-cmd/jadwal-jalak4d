@@ -29,7 +29,7 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Logo JALAK4D */}
           <div className="flex items-center">
             <a
-              href="http://coastalcarolinaconnection.com/"
+              href="https://jalak4d.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="cursor-pointer flex items-center gap-2.5 sm:gap-3 group"

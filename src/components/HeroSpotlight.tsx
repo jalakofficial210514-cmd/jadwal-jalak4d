@@ -486,7 +486,7 @@ export const HeroSpotlight: React.FC<HeroSpotlightProps> = () => {
             </span>
             
             <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-hero-3d tracking-normal sm:tracking-wide text-white uppercase leading-none pt-0.5 w-full whitespace-nowrap select-text cursor-text">
-              JALAK4D JADWAL & LIVE SCORE BOLA
+              JALAK4D LIVE SCORE BOLA 2026
             </h1>
           </div>
 
